@@ -1,0 +1,34 @@
+﻿Analyzing services...                                           
+
+   info - Don't invoke 'print' in production code - lib\services\gemini_service.dart:20:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\gemini_service.dart:61:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\gemini_service.dart:101:7 - avoid_print
+warning - The value of the field '_isInitialized' isn't used - lib\services\haptic_service.dart:10:8 - unused_field
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:24:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:33:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:39:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:61:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\tts_service.dart:32:7 - avoid_print
+   info - Statements in an if should be enclosed in a block - lib\services\vision_service.dart:191:29 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block - lib\services\vision_service.dart:192:34 - curly_braces_in_flow_control_structures
+   info - The member 'dispose' overrides an inherited member but isn't annotated with '@override' - lib\services\voice_command_service.dart:151:16 - annotate_overrides
+
+flutter : 12 issues 
+found. (ran in 0.9s)
+At line:1 char:1
++ flutter analyze 
+lib\services 2>&1 | 
+Out-File -FilePath 
+analyze_out.tx ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (12 issues    
+ found. (ran in 0.    
+9s):String) [], R    
+emoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 

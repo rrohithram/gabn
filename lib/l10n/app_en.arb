@@ -1,0 +1,24 @@
+{
+  "appTitle": "Accessibility Navigator",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "initializing": "Initializing...",
+  "readyCameraActive": "Ready. Camera active.",
+  "cameraInitFailed": "Camera initialization failed. Please check permissions.",
+  "errorStartingApp": "Error starting app. Please restart.",
+  "appReadySpeak": "App ready. Camera is active and scanning for obstacles.",
+  "cameraEnabled": "Camera enabled",
+  "cameraDisabled": "Camera disabled",
+  "cameraScanning": "Camera enabled. Scanning for obstacles.",
+  "navigationStarted": "Starting navigation",
+  "navigationStopped": "Navigation stopped",
+  "navigationStoppedCameraActive": "Navigation stopped. Camera active.",
+  "youHaveArrived": "You have arrived.",
+  "sosActivated": "SOS activated.",
+  "sosEmergencyHelpRequested": "Emergency help requested.",
+  "autoDescriptionEnabled": "Auto description enabled",
+  "autoDescriptionDisabled": "Auto description disabled",
+  "autoDescriptionPaused": "Auto description paused",
+  "autoDescriptionResumed": "Auto description resumed"
+}

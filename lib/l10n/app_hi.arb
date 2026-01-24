@@ -1,0 +1,21 @@
+{
+  "appTitle": "एक्सेसिबिलिटी नेविगेटर",
+  "initializing": "आरंभ हो रहा है...",
+  "readyCameraActive": "तैयार। कैमरा सक्रिय है।",
+  "cameraInitFailed": "कैमरा आरंभ करने में विफल। कृपया अनुमतियां जांचें।",
+  "errorStartingApp": "ऐप शुरू करने में त्रुटि। कृपया पुनरारंभ करें।",
+  "appReadySpeak": "ऐप तैयार है। कैमरा सक्रिय है और बाधाओं की तलाश कर रहा है।",
+  "cameraEnabled": "कैमरा सक्षम",
+  "cameraDisabled": "कैमरा अक्षम",
+  "cameraScanning": "कैमरा सक्षम। बाधाओं की तलाश की जा रही है।",
+  "navigationStarted": "नेविगेशन शुरू हो रहा है",
+  "navigationStopped": "नेविगेशन रुक गया",
+  "navigationStoppedCameraActive": "नेविगेशन रुक गया। कैमरा सक्रिय है।",
+  "youHaveArrived": "आप पहुंच गए हैं।",
+  "sosActivated": "SOS सक्रिय हो गया।",
+  "sosEmergencyHelpRequested": "आपातकालीन सहायता का अनुरोध किया गया।",
+  "autoDescriptionEnabled": "ऑटो विवरण सक्षम",
+  "autoDescriptionDisabled": "ऑटो विवरण अक्षम",
+  "autoDescriptionPaused": "ऑटो विवरण रुका हुआ है",
+  "autoDescriptionResumed": "ऑटो विवरण फिर से शुरू"
+}

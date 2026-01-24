@@ -1,0 +1,22 @@
+Analyzing gabn2...                                              
+
+   info - Don't invoke 'print' in production code - lib\main.dart:14:5 - avoid_print
+warning - The declaration '_describeScene' isn't referenced - lib\screens\home_screen.dart:280:8 - unused_element
+   info - Unnecessary braces in a string interpolation - lib\screens\home_screen.dart:417:36 - unnecessary_brace_in_string_interps
+  error - The setter 'useMock' isn't defined for the type 'VisionService' - lib\screens\home_screen.dart:603:15 - undefined_setter
+   info - Don't invoke 'print' in production code - lib\services\gemini_service.dart:20:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\gemini_service.dart:61:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\gemini_service.dart:101:7 - avoid_print
+warning - The value of the field '_isInitialized' isn't used - lib\services\haptic_service.dart:10:8 - unused_field
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:24:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:33:9 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:39:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\location_service.dart:61:7 - avoid_print
+   info - Don't invoke 'print' in production code - lib\services\tts_service.dart:32:7 - avoid_print
+warning - Unused import: 'dart:ui' - lib\services\vision_service.dart:5:8 - unused_import
+   info - Statements in an if should be enclosed in a block - lib\services\vision_service.dart:154:31 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block - lib\services\vision_service.dart:155:36 - curly_braces_in_flow_control_structures
+   info - The member 'dispose' overrides an inherited member but isn't annotated with '@override' - lib\services\voice_command_service.dart:100:16 - annotate_overrides
+  error - The name 'MyApp' isn't a class - test\widget_test.dart:16:35 - creation_with_non_type
+
+18 issues found. (ran in 2.7s)

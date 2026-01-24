@@ -1,0 +1,80 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : ../AppData/L
+ocal/Pub/Cache/hosted/
+pub.dev/tflite_flutter
+-0.10.4/lib/src/tensor
+.dart:58:12: Error: 
+The method 'Unmodifiab
+leUint8ListView' 
+isn't defined for the 
+type 'Tensor'.
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | 
+Out-File -FilePath 
+build_output.txt  ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (../AppData   
+ /Loca... type 'Te    
+nsor'.:String) []    
+, RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+ - 'Tensor' is from 'p
+ackage:tflite_flutter/
+src/tensor.dart' ('../
+AppData/Local/Pub/Cach
+e/hosted/pub.dev/tflit
+e_flutter-0.10.4/lib/s
+rc/tensor.dart').
+Try correcting the 
+name to the name of 
+an existing method, 
+or defining a method 
+named 'UnmodifiableUin
+t8ListView'.
+    return Unmodifiabl
+eUint8ListView(
+           ^^^^^^^^^^^
+^^^^^^^^^^^^^^
+Target kernel_snapshot
+_program failed: 
+Exception
+
+
+FAILURE: Build failed 
+with an exception.
+
+* What went wrong:
+Execution failed for 
+task ':app:compileFlut
+terBuildDebug'.
+> Process 'command 'C:
+\FlutterSDK\flutter\bi
+n\flutter.bat'' 
+finished with 
+non-zero exit value 1
+
+* Try:
+> Run with 
+--stacktrace option 
+to get the stack 
+trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at htt
+ps://help.gradle.org.
+
+BUILD FAILED in 24s
+Running Gradle task 'assembleDebug'...                             24.9s
+Gradle task 
+assembleDebug failed 
+with exit code 1
