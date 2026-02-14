@@ -42,7 +42,6 @@ dependencies:
   camera: ^0.11.0
 
   # Google ML Kit for Object Detection
-  google_mlkit_object_detection: ^0.13.0
 
   # Text-to-Speech
   flutter_tts: ^4.0.2
@@ -91,6 +90,8 @@ dependencies:
   flutter_phone_direct_caller: ^2.2.1
   flutter_native_contact_picker: ^0.0.11
   flutter_contacts: ^1.1.9+2
+  ultralytics_yolo: ^0.2.0
+  image: ^4.7.2
 
 dev_dependencies:
   flutter_test:

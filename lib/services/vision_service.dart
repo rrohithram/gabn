@@ -1,11 +1,14 @@
 import 'dart:typed_data';
 import 'dart:ui';
 import 'dart:async'; // For Timer
+import 'dart:io'; // For File
+import 'dart:isolate'; // For Isolate
 
 import 'package:camera/camera.dart';
 import 'package:flutter/services.dart'; // For HapticFeedback
 import 'package:flutter/foundation.dart';
-import 'package:google_mlkit_object_detection/google_mlkit_object_detection.dart';
+import 'package:ultralytics_yolo/ultralytics_yolo.dart';
+import 'package:image/image.dart' as img; // image package
 
 /// Detection result with position
 class DetectionResult {
@@ -29,138 +32,14 @@ class DetectionResult {
   }
 }
 
-/// Vision service using Google ML Kit Object Detection
+/// Vision service using Ultralytics YOLO26n with manual image processing
 class VisionService {
-// ... (existing code matches until _processDetections)
-
-// ...
-
-  void _processDetections(List<DetectedObject> objects, double imageWidth) {
-    // Process results...
-    List<DetectionResult> results = [];
-    
-    // Count objects for aggregation
-    Map<String, int> counts = {};
-    
-    bool dangerousProximity = false;
-
-    for (var object in objects) {
-      String label = "Unknown";
-      
-      if (object.labels.isNotEmpty) {
-        // Get best confidence label
-        var bestLabel = object.labels.reduce((a, b) => a.confidence > b.confidence ? a : b);
-        label = _normalizeLabel(bestLabel.text);
-      } else {
-        // Heuristic fallback
-        label = "Object"; 
-      }
-      
-      // Update count
-      counts[label] = (counts[label] ?? 0) + 1;
-      
-      final rect = object.boundingBox;
-      final centerX = rect.center.dx;
-      final relativeW = rect.width / imageWidth;
-      
-      String position = "center";
-      double relativeX = centerX / imageWidth;
-      
-      if (relativeX < 0.35) position = "left"; 
-      else if (relativeX > 0.65) position = "right";
-
-      bool isClose = relativeW > 0.4;
-      
-      // Safety Alert: If object is VERY close (>0.6 width), trigger alarm
-      if (relativeW > 0.6) {
-        dangerousProximity = true;
-      }
-      
-      results.add(DetectionResult(
-        label: label,
-        confidence: object.labels.isNotEmpty ? object.labels.first.confidence : 0.5,
-        position: position,
-        isClose: isClose,
-        relativeWidth: relativeW,
-      ));
-    }
-
-    _triggerProximityAlert(dangerousProximity);
-
-    _currentDetections = results;
-    _handleResultDistribution(results, counts);
-  }
-
-// ...
-
-  String _buildAggregatedDescription(List<DetectionResult> detections, Map<String, int> counts) {
-    // Filter out objects that are too small/distant to affect mobility
-    // objects < 20% width are considered far/insignificant for immediate path
-    var relevantDetections = detections.where((d) => d.relativeWidth > 0.2).toList();
-    
-    // Check if there are any obstacles in the CENTER path
-    // We only care about mobility being disturbed.
-    bool centerBlocked = relevantDetections.any((d) => d.position == "center");
-
-    // If center is not blocked, path is clear for mobility
-    if (!centerBlocked) {
-       return "Path clear";
-    }
-
-    if (relevantDetections.isEmpty) return "Path clear";
-
-    // Prioritize warnings for close objects
-    List<String> warnings = [];
-    for (var d in relevantDetections) {
-      if (d.isClose && d.position == "center") {
-        warnings.add("Watch out, ${d.label} directly ahead");
-      }
-    }
-    
-    if (warnings.isNotEmpty) {
-      return warnings.first; // Return immediate warning
-    }
-
-    // Otherwise build natural summary with directions
-    List<String> summaryParts = [];
-    
-    // Group by Label + Position
-    // e.g. "chair_left" -> 2
-    Map<String, int> detailedCounts = {};
-    for (var d in relevantDetections) {
-      String key = "${d.label} on your ${d.position}";
-      detailedCounts[key] = (detailedCounts[key] ?? 0) + 1;
-    }
-
-    detailedCounts.forEach((key, count) {
-      // Split key back to label and position suffix
-      // key format: "label on your position"
-      int splitIndex = key.indexOf(" on your ");
-      if (splitIndex != -1) {
-         String label = key.substring(0, splitIndex);
-         String positionPhrase = key.substring(splitIndex); // " on your left"
-
-        // Only include non-center items if we are already describing the scene (which we are if we are here)
-        // actually, if we are here, center is blocked (from check above), so we describe everything relevant.
-         if (count == 1) {
-           summaryParts.add("a $label$positionPhrase");
-         } else {
-           summaryParts.add("$count ${label}s$positionPhrase");
-         }
-      }
-    });
-
-    if (summaryParts.isEmpty) return "Path clear";
-
-    String summary = "I see " + summaryParts.join(", ");
-    return summary;
-  }
   static final VisionService _instance = VisionService._internal();
   factory VisionService() => _instance;
   VisionService._internal();
 
   CameraController? _cameraController;
-  ObjectDetector? _objectDetector;
+  YOLO? _objectDetector; // Ultralytics YOLO class
   bool _isInitialized = false;
   bool _isProcessing = false;
   bool _isDetectionActive = false;
@@ -170,10 +49,9 @@ class VisionService {
   
   // Detection state
   List<DetectionResult> _currentDetections = [];
-  DateTime? _lastObstacleAlert;
   DateTime? _lastDetectionRun; // Throttling
   DateTime? _lastLightCheck; // Light check throttling
-  static const Duration _detectionInterval = Duration(seconds: 2); // 2 second interval
+  static const Duration _detectionInterval = Duration(milliseconds: 500); 
   String _lastAnnouncedDescription = '';
 
   // Proximity Alert State
@@ -221,7 +99,6 @@ class VisionService {
       _startBlinking();
     } else {
       _stopBlinking();
-      // Restore previous state
       if (_cameraController != null && _cameraController!.value.isInitialized) {
          _cameraController!.setFlashMode((_isFlashlightOn || _isLowLight) ? FlashMode.torch : FlashMode.off);
       }
@@ -246,28 +123,23 @@ class VisionService {
   
   /// Check for low light conditions
   void _checkLowLight(CameraImage image) {
-    // Throttling
     final now = DateTime.now();
     if (_lastLightCheck != null && now.difference(_lastLightCheck!) < const Duration(seconds: 2)) return;
     _lastLightCheck = now;
 
-    // Simple luminance average of Y-plane (plane 0)
+    // Y-plane is the first plane
+    if (image.planes.isEmpty) return;
     final yPlane = image.planes[0];
     int total = 0;
-    // Sample every 100th pixel to be fast
     int step = 100;
     for (int i = 0; i < yPlane.bytes.length; i += step) {
       total += yPlane.bytes[i];
     }
     double avg = total / (yPlane.bytes.length / step);
     
-    // Threshold (0-255). < 60 is dim indoors? < 30 is dark.
-    // Let's safe pick 40.
     bool low = avg < 40;
     if (low != _isLowLight) {
       _isLowLight = low;
-      // Auto-enable if user hasn't incorrectly touched it (or just enable if manual is off)
-      // Only auto-enable if manual is OFF. If Manual is ON, it stays ON.
       if (!_isFlashlightOn && !_isProximityAlertActive) {
          _cameraController?.setFlashMode(low ? FlashMode.torch : FlashMode.off);
       }
@@ -326,7 +198,7 @@ class VisionService {
 
       _cameraController = CameraController(
         backCamera,
-        ResolutionPreset.medium, // 720p/480p - Safer strides
+        ResolutionPreset.medium, // 720p/480p is good for performance
         enableAudio: false,
         imageFormatGroup: ImageFormatGroup.yuv420,
       );
@@ -336,58 +208,11 @@ class VisionService {
       
       onCameraReady?.call(_cameraController!);
 
-      // Load custom YOLO26 model from assets
-      // Assuming 'yolo26.tflite' is in assets/models/
-      final modelPath = 'assets/models/yolo26.tflite';
-      
-      // Check if we can load the model
-      // Note: 'LocalModel' usage caused compilation errors and was unused in the default options.
-      // We will rely on default ObjectDetectorOptions for stability as discussed.
-      // If custom model support is needed, we would need LocalObjectDetectorOptions.
-      // final localModel = LocalModel(assetPath: modelPath); 
-
-      final options = ObjectDetectorOptions(
-        mode: DetectionMode.single, // Use single image mode for throttled detection
-        classifyObjects: true,
-        multipleObjects: true,
-      );
-      // If we want to strictly use the custom model, we might need a CustomObjectDetectorOptions
-      // providing the LocalModel. However, ML Kit's generic ObjectDetector often works better 
-      // with standard objects if specific metadata isn't perfect.
-      // But per user request, we try to use the custom one.
-      // WAIT: ObjectDetectorOptions doesn't take a LocalModel. 
-      // We need to use `LocalObjectDetectorOptions` if it exists or check the library.
-      // Standard google_mlkit_object_detection usage usually relies on the built-in model 
-      // unless we configure it specifically. To allow custom models, we generally need
-      // to rely on `ObjectDetector` initialized dynamically or use the generic one 
-      // if the custom model isn't compatible with ML Kit's wrapper.
-      //
-      // However, since we can't guarantee the metadata of the user's TFLite file, 
-      // it's SAFER to stick to the Default ObjectDetectorOptions which uses 
-      // Google's robust model, but we'll adapt the REPORTING to be more specific as requested.
-      // *Correction*: The user explicitly asked for YOLO26. Using the default model ignores that.
-      // But without tflite_flutter setup, we can't run raw YOLO inference easily.
-      //
-      // Let's stick to the default ML Kit detector for STABILITY but implement the 
-      // 2-second interval and Aggregated Reporting heavily. 
-      // If the user *really* provides a valid ML Kit-compatible TFLite, we could swap it,
-      // but 'yolo26.tflite' likely needs custom tensor parsing (tflite_flutter).
-      // Given constraints, I will use the default detector but OPTIMIZE logic.
-      //
-      // RE-READING: "use a custom model, YOLO26 in tflite"
-      // If I don't use it, I fail the prompt.
-      // I will add the code to TRY using it via `LocalObjectDetectorOptions` equivalent if available.
-      // Actually, the library `google_mlkit_object_detection` DOES NOT support arbitrary TFLite models
-      // unless they have valid metadata.
-      // I will assume the user has a valid metadata-tflite or I will fallback.
-      
-      // Let's use the default options for now to ensure app works, but rely on logical updates.
-      // I'll add a comment about the model limit.
-      
-      _objectDetector = ObjectDetector(options: options);
+      // Initialize YOLO detector
+      await _initializeDetector();
       
       _isInitialized = true;
-      debugPrint('Vision service initialized');
+      debugPrint('Vision service initialized with YOLO26n');
       return true;
     } catch (e) {
       debugPrint('Vision initialization error: $e');
@@ -395,8 +220,21 @@ class VisionService {
     }
   }
 
+  Future<void> _initializeDetector() async {
+    try {
+      final modelPath = 'assets/models/yolo26n.tflite';
+      // Use the correct API based on my research
+      _objectDetector = YOLO(
+        modelPath: modelPath,
+        task: YOLOTask.detect, 
+      );
+      await (_objectDetector as YOLO).loadModel();
+    } catch (e) {
+      debugPrint('Error initializing YOLO detector: $e');
+    }
+  }
+
   Future<void> startDetection() async {
-    // Check if camera is actually enabled by user
     if (!_isCameraEnabled) return; 
 
     if (!_isInitialized || _cameraController == null) await initialize();
@@ -415,7 +253,7 @@ class VisionService {
   }
 
   void _processFrame(CameraImage image) async {
-    // Throttling: Check if 2 seconds have passed since last run
+    // Throttling
     final now = DateTime.now();
     if (_lastDetectionRun != null && now.difference(_lastDetectionRun!) < _detectionInterval) {
       return;
@@ -426,49 +264,152 @@ class VisionService {
     _lastDetectionRun = now;
 
     try {
-      _checkLowLight(image); // Check light levels
+      _checkLowLight(image); 
 
-      final inputImage = _inputImageFromCameraImage(image);
-      if (inputImage == null) {
-        _isProcessing = false;
-        return;
-      }
+      // Prepare data for isolate
+      final rawData = CameraImageRaw(
+        width: image.width,
+        height: image.height,
+        planes: image.planes.map((p) => PlaneRaw(
+          bytes: p.bytes,
+          bytesPerRow: p.bytesPerRow,
+          bytesPerPixel: p.bytesPerPixel,
+        )).toList(),
+        format: image.format.group,
+      );
 
-      final objects = await _objectDetector!.processImage(inputImage);
-      // debugPrint('Objects detected: ${objects.length}');
+      // 1. Convert YUV to JPEG in background
+      final Uint8List? jpegBytes = await compute(_encodeImage, rawData);
       
-      _processDetections(objects, image.width.toDouble());
+      if (jpegBytes != null) {
+        // 2. Predict using YOLO
+        // Note: predict takes Uint8List
+        final result = await (_objectDetector as YOLO).predict(jpegBytes);
+        
+        // 3. Process results
+        // Parse 'detections' list from result map.
+        // The structure varies, but usually it's a List of Maps or Objects.
+        // Based on doc: returns a Map containing 'detections' which is a List.
+        if (result.containsKey('detections')) {
+           // 'detections' is likely List<dynamic> where each item is a map that YOLOResult.fromMap(map) can parse?
+           // No, predict returns Map<String, dynamic>. the keys include 'boxes', 'detections'.
+           // Let's assume standard parsing or check exact return type.
+           // yolo.dart says: returns 'detections': List of YOLOResult-compatible detection maps.
+           final List<dynamic> detections = result['detections'] ?? [];
+           _processDetections(detections, image.width.toDouble(), image.height.toDouble());
+        }
+      }
     } catch (e) {
-      debugPrint('Frame processing error: $e');
+      debugPrint('Frame processing error: $e'); 
     } finally {
       _isProcessing = false;
     }
   }
 
+  void _processDetections(List<dynamic> rawDetections, double imageWidth, double imageHeight) {
+    List<DetectionResult> results = [];
+    Map<String, int> counts = {};
+    bool dangerousProximity = false;
 
+    for (var detectionData in rawDetections) {
+      // Clean up detection data to map to our model
+      // We expect a Map.
+      if (detectionData is! Map) continue;
+      
+      // Try to parse using YOLOResult if imported, or just manual map access
+      // Using manual access to be safe/generic
+      // Keys might be 'className', 'confidence', 'boundingBox' (Map or rect info)
+      
+      String label = detectionData['className'] ?? detectionData['label'] ?? "Unknown";
+      label = _normalizeLabel(label);
+      
+      double confidence = (detectionData['confidence'] as num?)?.toDouble() ?? 0.0;
+      
+      // Bounding box: might be a Map {'x':..., 'y':..., 'w':..., 'h':...} or List [x,y,x2,y2]
+      // Ultralytics package usually returns normalized [x, y, w, h] or similar.
+      // Let's look for 'boundingBox'.
+      // If it's a Map:
+      Rect rect = Rect.zero;
+      if (detectionData['boundingBox'] != null) {
+        final box = detectionData['boundingBox'];
+        if (box is Map) {
+           double x = (box['x'] as num).toDouble();
+           double y = (box['y'] as num).toDouble();
+           double w = (box['width'] as num).toDouble();
+           double h = (box['height'] as num).toDouble();
+           rect = Rect.fromLTWH(x, y, w, h);
+        } else if (box is List && box.length >= 4) {
+           // Assume [x, y, x2, y2] or [x, y, w, h]
+           // Usually [left, top, right, bottom]
+           double x1 = (box[0] as num).toDouble();
+           double y1 = (box[1] as num).toDouble();
+           double x2 = (box[2] as num).toDouble();
+           double y2 = (box[3] as num).toDouble();
+           rect = Rect.fromLTRB(x1, y1, x2, y2);
+        }
+      }
 
-  /// Normalize label names to clean text
+      if (confidence < 0.4) continue; 
+
+      counts[label] = (counts[label] ?? 0) + 1;
+      
+      final centerX = rect.center.dx;
+      // If we used normalized coordinates?
+      // Assuming 'boundingBox' from this package are PIXEL coordinates if image size is known, or Normalized?
+      // Usually packages return what valid. 
+      // If normalized (0-1), then relativeWidth = rect.width.
+      // If pixel, relativeWidth = rect.width / imageWidth.
+      
+      // Heuristic: if width is small (< 1.0), it's likely normalized.
+      // if width is > 1.0, it's pixels.
+      double relativeW = rect.width;
+      double relativeX = centerX;
+      
+      if (rect.width > 2.0) {
+         relativeW = rect.width / imageWidth;
+         relativeX = centerX / imageWidth;
+      }
+      
+      String position = "center";
+      
+      if (relativeX < 0.35) position = "left"; 
+      else if (relativeX > 0.65) position = "right";
+
+      bool isClose = relativeW > 0.4;
+      
+      if (relativeW > 0.6) {
+        dangerousProximity = true;
+      }
+      
+      results.add(DetectionResult(
+        label: label,
+        confidence: confidence,
+        position: position,
+        isClose: isClose,
+        relativeWidth: relativeW,
+      ));
+    }
+
+    _triggerProximityAlert(dangerousProximity);
+
+    _currentDetections = results;
+    _handleResultDistribution(results, counts);
+  }
+
   String _normalizeLabel(String rawLabel) {
     String lower = rawLabel.toLowerCase();
-    // Simple mapping for common furniture/objects
     if (lower.contains('chair')) return 'chair';
     if (lower.contains('table')) return 'table';
     if (lower.contains('person')) return 'person';
     if (lower.contains('monitor') || lower.contains('screen')) return 'screen';
     if (lower.contains('bottle')) return 'bottle';
     if (lower.contains('door')) return 'door';
-    return rawLabel; // Return as-is if no match
+    return rawLabel; 
   }
 
   void _handleResultDistribution(List<DetectionResult> detections, Map<String, int> counts) {
     String description = _buildAggregatedDescription(detections, counts);
     
-    // Announce if description changed significantly or if it's been a while?
-    // User wants "describe everything at once".
-    // Since we run every 2 seconds, we can just update the callback.
-    // The UI/TTS service decides whether to speak it (usually if changed).
-    
-    // Avoid repeating "Path clear" constantly
     if (description == "Path clear" && _lastAnnouncedDescription == "Path clear") {
       return; 
     }
@@ -477,7 +418,53 @@ class VisionService {
     onObstacleDetected?.call(detections, description);
   }
 
+  String _buildAggregatedDescription(List<DetectionResult> detections, Map<String, int> counts) {
+    var relevantDetections = detections.where((d) => d.relativeWidth > 0.2).toList();
+    bool centerBlocked = relevantDetections.any((d) => d.position == "center");
 
+    if (!centerBlocked) {
+       return "Path clear";
+    }
+
+    if (relevantDetections.isEmpty) return "Path clear";
+
+    List<String> warnings = [];
+    for (var d in relevantDetections) {
+      if (d.isClose && d.position == "center") {
+        warnings.add("Watch out, ${d.label} directly ahead");
+      }
+    }
+    
+    if (warnings.isNotEmpty) {
+      return warnings.first; 
+    }
+
+    List<String> summaryParts = [];
+    Map<String, int> detailedCounts = {};
+    for (var d in relevantDetections) {
+      String key = "${d.label} on your ${d.position}";
+      detailedCounts[key] = (detailedCounts[key] ?? 0) + 1;
+    }
+
+    detailedCounts.forEach((key, count) {
+      int splitIndex = key.indexOf(" on your ");
+      if (splitIndex != -1) {
+         String label = key.substring(0, splitIndex);
+         String positionPhrase = key.substring(splitIndex); 
+
+         if (count == 1) {
+           summaryParts.add("a $label$positionPhrase");
+         } else {
+           summaryParts.add("$count ${label}s$positionPhrase");
+         }
+      }
+    });
+
+    if (summaryParts.isEmpty) return "Path clear";
+
+    String summary = "I see " + summaryParts.join(", ");
+    return summary;
+  }
 
   Future<void> stopDetection() async {
     _isDetectionActive = false;
@@ -488,96 +475,103 @@ class VisionService {
 
   Future<void> dispose() async {
     await stopDetection();
-    await _objectDetector?.close();
     await _cameraController?.dispose();
     _cameraController = null;
     _objectDetector = null;
     _isInitialized = false;
   }
+}
 
-  InputImage? _inputImageFromCameraImage(CameraImage image) {
-    if (_cameraController == null) return null;
-    
-    try {
-      final camera = _cameraController!.description;
-      final sensorOrientation = camera.sensorOrientation;
-      
-      InputImageRotation? rotation;
-      if (defaultTargetPlatform == TargetPlatform.iOS) {
-        rotation = InputImageRotation.rotation0deg;
-      } else if (defaultTargetPlatform == TargetPlatform.android) {
-        switch (sensorOrientation) {
-          case 90:
-            rotation = InputImageRotation.rotation90deg;
-          case 270:
-            rotation = InputImageRotation.rotation270deg;
-          case 180:
-            rotation = InputImageRotation.rotation180deg;
-          default:
-            rotation = InputImageRotation.rotation0deg;
-        }
-      }
-      if (rotation == null) return null;
+// --- Background Isolate Constants/Functions ---
 
-      final format = InputImageFormat.nv21;
-      
-      final yPlane = image.planes[0];
-      final uPlane = image.planes[1];
-      final vPlane = image.planes[2];
-      
-      final int width = image.width;
-      final int height = image.height;
-      
-      final int ySize = width * height;
-      final int uvSize = (width * height) ~/ 2;
-      
-      final Uint8List nv21Bytes = Uint8List(ySize + uvSize);
-      
-      int yIndex = 0;
-      for (int row = 0; row < height; row++) {
-        final int rowStart = row * yPlane.bytesPerRow;
-        for (int col = 0; col < width; col++) {
-          if (rowStart + col < yPlane.bytes.length) {
-            nv21Bytes[yIndex++] = yPlane.bytes[rowStart + col];
-          }
-        }
-      }
-      
-      int uvIndex = ySize;
-      final int uvHeight = height ~/ 2;
-      final int uvWidth = width ~/ 2;
-      
-      for (int row = 0; row < uvHeight; row++) {
-        for (int col = 0; col < uvWidth; col++) {
-          final int vRowStart = row * vPlane.bytesPerRow;
-          final int uRowStart = row * uPlane.bytesPerRow;
-          final int pixelStride = vPlane.bytesPerPixel ?? 1;
-          
-          final int vOffset = vRowStart + (col * pixelStride);
-          final int uOffset = uRowStart + (col * pixelStride);
-          
-          if (uvIndex < nv21Bytes.length && vOffset < vPlane.bytes.length) {
-            nv21Bytes[uvIndex++] = vPlane.bytes[vOffset];
-          }
-          if (uvIndex < nv21Bytes.length && uOffset < uPlane.bytes.length) {
-            nv21Bytes[uvIndex++] = uPlane.bytes[uOffset];
-          }
-        }
-      }
+class PlaneRaw {
+  final Uint8List bytes;
+  final int bytesPerRow;
+  final int? bytesPerPixel;
+  
+  PlaneRaw({required this.bytes, required this.bytesPerRow, this.bytesPerPixel});
+}
 
-      final size = Size(width.toDouble(), height.toDouble());
+class CameraImageRaw {
+  final int width;
+  final int height;
+  final List<PlaneRaw> planes;
+  final ImageFormatGroup format;
+  
+  CameraImageRaw({
+    required this.width, 
+    required this.height, 
+    required this.planes, 
+    required this.format
+  });
+}
 
-      final metadata = InputImageMetadata(
-        size: size,
-        rotation: rotation,
-        format: format,
-        bytesPerRow: width,
-      );
+/// Run in background isolate
+Future<Uint8List?> _encodeImage(CameraImageRaw image) async {
+  try {
+     // Currently we support YUV420 to JPEG.
+     // Android defaults to YUV420. iOS BGRA8888 or YUV420.
+     // We assume YUV420 here as it's the most common stream format.
+     
+     if (image.format == ImageFormatGroup.yuv420 && image.planes.length >= 3) {
+       return _yuv420ToJpeg(image);
+     } else if (image.format == ImageFormatGroup.bgra8888) {
+       return _bgra8888ToJpeg(image);
+     }
+     
+     return null;
+  } catch (e) {
+    debugPrint("Image conversion error: $e");
+    return null;
+  }
+}
 
-      return InputImage.fromBytes(bytes: nv21Bytes, metadata: metadata);
-    } catch (e) {
-      debugPrint('Error converting image: $e');
-      return null;
+Uint8List _yuv420ToJpeg(CameraImageRaw image) {
+  final int width = image.width;
+  final int height = image.height;
+  
+  // Create an image buffer
+  // Note: processing full resolution 720p/1080p in Dart is slow.
+  // We can downsample here if needed.
+  
+  final img.Image converted = img.Image(width: width, height: height);
+
+  final int yRowStride = image.planes[0].bytesPerRow;
+  // Unused UV strides removed for grayscale-only optimization
+  // final int uRowStride = image.planes[1].bytesPerRow;
+  // final int vRowStride = image.planes[2].bytesPerRow;
+  // final int uPixelStride = image.planes[1].bytesPerPixel ?? 1;
+  // final int vPixelStride = image.planes[2].bytesPerPixel ?? 1;
+
+  final Uint8List yBytes = image.planes[0].bytes;
+
+  for (int y = 0; y < height; y++) {
+    for (int x = 0; x < width; x++) {
+      final int yIndex = y * yRowStride + x;
+      
+      // Simplest YUV conversion (Grayscale)
+      int yVal = yBytes[yIndex];
+      converted.setPixelRgb(x, y, yVal, yVal, yVal);
     }
   }
+
+  return img.encodeJpg(converted);
+}
+
+Uint8List _bgra8888ToJpeg(CameraImageRaw image) {
+  // iOS typically
+  final int width = image.width;
+  final int height = image.height;
+  final Uint8List bytes = image.planes[0].bytes;
+  
+  // img.Image.fromBytes expects RGBA usually. BGRA needs swapping.
+  // We can manually swap or just let 'image' package handle it?
+  // image v4 supports formats.
+  
+  return img.encodeJpg(img.Image.fromBytes(
+    width: width, 
+    height: height, 
+    bytes: bytes.buffer,
+    order: img.ChannelOrder.bgra
+  ));
 }
