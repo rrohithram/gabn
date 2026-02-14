@@ -1,0 +1,215 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | 
+Out-File -FilePath 
+"c:\Users\rrohi\D ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (:String   
+ ) [], RemoteExce    
+ption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+FAILURE: Build 
+failed with an 
+exception.
+
+* Where:
+Settings file 'C:\Use
+rs\rrohi\Downloads\ga
+bn2\android\settings.
+gradle.kts' line: 20
+
+* What went wrong:
+Error resolving 
+plugin [id: 'dev.flut
+ter.flutter-plugin-lo
+ader', version: 
+'1.0.0']
+> A problem occurred 
+configuring project 
+':gradle'.
+   > Multiple build 
+operations failed.
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\613
+2ff50e849b4328d7c81fa
+98b027d9\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\de2
+1c199aa80b9ecdde0e8d2
+5653142c\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\867
+b0c9b1b844642cb0abbc2
+2a1bc755\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\575
+fcb8c5618c4ac9630ca81
+16076520\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\bbc
+1909cd45f9382876520af
+324dd2df\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\57f
+7cd823f335e5a07ba8760
+cf3fe105\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\7ed
+d50f96fbc571575219e03
+a93cba43\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\e22
+ac01f360a2f4982af98a1
+93cdd390\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\cb0
+ed2cc9b7d760feeceebe5
+04bedab6\metadata.bin
+         Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\b59
+64c4626a6ac2924bf9c9a
+9100adf4\metadata.bin
+         ...and 2 
+more failures.
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\613
+2ff50e849b4328d7c81fa
+98b027d9\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\de2
+1c199aa80b9ecdde0e8d2
+5653142c\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\867
+b0c9b1b844642cb0abbc2
+2a1bc755\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\575
+fcb8c5618c4ac9630ca81
+16076520\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\bbc
+1909cd45f9382876520af
+324dd2df\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\57f
+7cd823f335e5a07ba8760
+cf3fe105\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\7ed
+d50f96fbc571575219e03
+a93cba43\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\e22
+ac01f360a2f4982af98a1
+93cdd390\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\cb0
+ed2cc9b7d760feeceebe5
+04bedab6\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\b59
+64c4626a6ac2924bf9c9a
+9100adf4\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\719
+0ed9035c2dee883e4569d
+6a79d6a7\metadata.bin
+      > Could not 
+read workspace 
+metadata from C:\User
+s\rrohi\.gradle\cache
+s\8.12\transforms\6e3
+ef1e9b5601aad3137bf6a
+c019d12a\metadata.bin
+
+* Try:
+> Run with 
+--stacktrace option 
+to get the stack 
+trace.
+> Run with --info or 
+--debug option to 
+get more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at ht
+tps://help.gradle.org
+.
+
+BUILD FAILED in 6s
+Running Gradle task 'assembleDebug'...                              6.8s
+Gradle task 
+assembleDebug failed 
+with exit code 1

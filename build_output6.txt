@@ -1,0 +1,13 @@
+Running Gradle task 'assembleDebug'...                          
+Running Gradle task 'assembleDebug'...                             29.4s
+
+┌─ Flutter Fix ─────────────────────────────────────────────────────────────┐
+│ This issue appears to be https://github.com/flutter/flutter/issues/58247. │
+│ Fix this issue by adding the following to the file                        │
+│ C:\Users\rrohi\Downloads\gabn2\android\app\build.gradle.kts:              │
+│ android {                                                                 │
+│   lintOptions {                                                           │
+│     checkReleaseBuilds false                                              │
+│   }                                                                       │
+│ }                                                                         │
+└───────────────────────────────────────────────────────────────────────────┘

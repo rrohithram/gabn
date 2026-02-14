@@ -1,0 +1,454 @@
+﻿WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/C:/Users/rrohi/.gradle/wrapper/dists/gradle-8.12-all/ejduaidbjup3bmmkhw3rie4zb/gradle-8.12/lib/native-platform-0.22-milestone-27.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Initialized native services in: C:\Users\rrohi\.gradle\native
+Initialized jansi services in: C:\Users\rrohi\.gradle\native
+The client will now receive all logging from the daemon (pid: 4848). The daemon log file: C:\Users\rrohi\.gradle\daemon\8.12\daemon-4848.out.log
+Starting 4th build in daemon [uptime: 4 mins 8.854 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 8 GiB, non-heap usage: 3% of 4 GiB]
+Using 16 worker leases.
+Now considering [C:\Users\rrohi\Downloads\gabn2\android, C:\FlutterSDK\flutter\packages\flutter_tools\gradle] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Now considering [C:\FlutterSDK\flutter\packages\flutter_tools\gradle, C:\Users\rrohi\Downloads\gabn2\android] as hierarchies to watch
+
+> Configure project :gradle
+Evaluating project ':gradle' using build file 'C:\FlutterSDK\flutter\packages\flutter_tools\gradle\build.gradle.kts'.
+Resolved plugin [id: 'org.gradle.java-gradle-plugin']
+Resolved plugin [id: 'org.gradle.groovy']
+Resolved plugin [id: 'org.gradle.kotlin.kotlin-dsl', version: '5.1.2']
+Resolved plugin [id: 'org.jetbrains.kotlin.jvm', version: '1.9.20']
+Using Kotlin Gradle Plugin gradle85 variant
+kotlin scripting plugin: created the scripting discovery configuration: kotlinScriptDef
+kotlin scripting plugin: created the scripting discovery configuration: testKotlinScriptDef
+file or directory 'C:\FlutterSDK\flutter\packages\flutter_tools\gradle\src\main\java', not found
+Resolved plugin [id: 'dev.flutter.flutter-plugin-loader', version: '1.0.0']
+Resolved plugin [id: 'com.android.application', version: '8.9.1', apply: false]
+Resolved plugin [id: 'org.jetbrains.kotlin.android', version: '2.1.0', apply: false]
+Resolved plugin [id: 'org.gradle.toolchains.foojay-resolver-convention', version: '0.9.0']
+Resolve mutations for :gradle:checkKotlinGradlePluginConfigurationErrors (Thread[#824,Execution worker,5,main]) started.
+:gradle:checkKotlinGradlePluginConfigurationErrors (Thread[#832,Execution worker Thread 9,5,main]) started.
+
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':gradle:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :gradle:compileKotlin (Thread[#832,Execution worker Thread 9,5,main]) started.
+:gradle:compileKotlin (Thread[#832,Execution worker Thread 9,5,main]) started.
+
+> Task :gradle:compileKotlin UP-TO-DATE
+Caching disabled for task ':gradle:compileKotlin' because:
+  Build cache is disabled
+Skipping task ':gradle:compileKotlin' as it is up-to-date.
+Resolve mutations for :gradle:compileJava (Thread[#832,Execution worker Thread 9,5,main]) started.
+:gradle:compileJava (Thread[#832,Execution worker Thread 9,5,main]) started.
+
+> Task :gradle:compileJava NO-SOURCE
+Skipping task ':gradle:compileJava' as it has no source files and no previous output files.
+Resolve mutations for :gradle:compileGroovy (Thread[#832,Execution worker Thread 9,5,main]) started.
+:gradle:compileGroovy (Thread[#832,Execution worker Thread 9,5,main]) started.
+
+> Task :gradle:compileGroovy NO-SOURCE
+Skipping task ':gradle:compileGroovy' as it has no source files and no previous output files.
+Resolve mutations for :gradle:pluginDescriptors (Thread[#832,Execution worker Thread 9,5,main]) started.
+:gradle:pluginDescriptors (Thread[#836,Execution worker Thread 13,5,main]) started.
+
+> Task :gradle:pluginDescriptors UP-TO-DATE
+Caching disabled for task ':gradle:pluginDescriptors' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':gradle:pluginDescriptors' as it is up-to-date.
+Resolve mutations for :gradle:processResources (Thread[#836,Execution worker Thread 13,5,main]) started.
+:gradle:processResources (Thread[#833,Execution worker Thread 10,5,main]) started.
+
+> Task :gradle:processResources UP-TO-DATE
+Caching disabled for task ':gradle:processResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':gradle:processResources' as it is up-to-date.
+Resolve mutations for :gradle:classes (Thread[#833,Execution worker Thread 10,5,main]) started.
+:gradle:classes (Thread[#832,Execution worker Thread 9,5,main]) started.
+
+> Task :gradle:classes UP-TO-DATE
+Skipping task ':gradle:classes' as it has no actions.
+Resolve mutations for :gradle:jar (Thread[#832,Execution worker Thread 9,5,main]) started.
+:gradle:jar (Thread[#835,Execution worker Thread 12,5,main]) started.
+
+> Task :gradle:jar UP-TO-DATE
+Caching disabled for task ':gradle:jar' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':gradle:jar' as it is up-to-date.
+Settings evaluated using settings file 'C:\Users\rrohi\Downloads\gabn2\android\settings.gradle.kts'.
+Projects loaded. Root project using build file 'C:\Users\rrohi\Downloads\gabn2\android\build.gradle.kts'.
+Included projects: [root project 'android', project ':app', project ':battery_plus', project ':camera_android_camerax', project ':flutter_contacts', project ':flutter_native_contact_picker', project ':flutter_phone_direct_caller', project ':flutter_plugin_android_lifecycle', project ':flutter_tts', project ':geolocator_android', project ':google_maps_flutter_android', project ':google_mlkit_commons', project ':google_mlkit_text_recognition', project ':permission_handler_android', project ':sensors_plus', project ':shared_preferences_android', project ':speech_to_text', project ':ultralytics_yolo', project ':url_launcher_android']
+
+> Configure project :app
+Evaluating project ':app' using build file 'C:\Users\rrohi\Downloads\gabn2\android\app\build.gradle.kts'.
+Resolved plugin [id: 'com.android.application']
+Resolved plugin [id: 'kotlin-android']
+Resolved plugin [id: 'dev.flutter.flutter-gradle-plugin']
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+
+> Configure project :
+Evaluating root project 'android' using build file 'C:\Users\rrohi\Downloads\gabn2\android\build.gradle.kts'.
+
+> Configure project :battery_plus
+Evaluating project ':battery_plus' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\battery_plus-5.0.3\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :camera_android_camerax
+Evaluating project ':camera_android_camerax' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\camera_android_camerax-0.6.27\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :flutter_contacts
+Evaluating project ':flutter_contacts' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_contacts-1.1.9+2\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :flutter_native_contact_picker
+Evaluating project ':flutter_native_contact_picker' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_contact_picker-0.0.11\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :flutter_phone_direct_caller
+Evaluating project ':flutter_phone_direct_caller' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_phone_direct_caller-2.2.1\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :flutter_plugin_android_lifecycle
+Evaluating project ':flutter_plugin_android_lifecycle' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_plugin_android_lifecycle-2.0.33\android\build.gradle'.
+Using default execution profile
+
+> Configure project :flutter_tts
+Evaluating project ':flutter_tts' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_tts-4.2.5\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :geolocator_android
+Evaluating project ':geolocator_android' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\geolocator_android-4.6.2\android\build.gradle'.
+Using default execution profile
+
+> Configure project :google_maps_flutter_android
+Evaluating project ':google_maps_flutter_android' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\google_maps_flutter_android-2.18.9\android\build.gradle'.
+Using default execution profile
+
+> Configure project :google_mlkit_commons
+Evaluating project ':google_mlkit_commons' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\google_mlkit_commons-0.7.1\android\build.gradle'.
+Using default execution profile
+
+> Configure project :google_mlkit_text_recognition
+Evaluating project ':google_mlkit_text_recognition' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\google_mlkit_text_recognition-0.12.1\android\build.gradle'.
+Using default execution profile
+
+> Configure project :permission_handler_android
+Evaluating project ':permission_handler_android' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\permission_handler_android-12.1.0\android\build.gradle'.
+Using default execution profile
+
+> Configure project :sensors_plus
+Evaluating project ':sensors_plus' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\sensors_plus-4.0.2\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :shared_preferences_android
+Evaluating project ':shared_preferences_android' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.18\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :speech_to_text
+Evaluating project ':speech_to_text' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\speech_to_text-7.3.0\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+
+> Configure project :ultralytics_yolo
+Evaluating project ':ultralytics_yolo' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\ultralytics_yolo-0.2.0\android\build.gradle'.
+Using default execution profile
+Using Kotlin Gradle Plugin gradle85 variant
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+C/C++: android.ndkVersion from module build.gradle is [27.0.12077973]
+C/C++: android.ndkPath from module build.gradle is not set
+C/C++: ndk.dir in local.properties is not set
+C/C++: Not considering ANDROID_NDK_HOME because support was removed after deprecation period.
+C/C++: sdkFolder is C:\Users\rrohi\AppData\Local\Android\sdk
+
+> Configure project :url_launcher_android
+Evaluating project ':url_launcher_android' using build file 'C:\Users\rrohi\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.3.28\android\build.gradle'.
+Using default execution profile
+All projects evaluated.
+Task path ':ultralytics_yolo:compileDebugKotlin' matched project ':ultralytics_yolo'
+Task name matched 'compileDebugKotlin'
+Selected primary task 'compileDebugKotlin' from project :ultralytics_yolo
+Tasks to be executed: [task ':ultralytics_yolo:checkKotlinGradlePluginConfigurationErrors', task ':ultralytics_yolo:preBuild', task ':ultralytics_yolo:preDebugBuild', task ':ultralytics_yolo:generateDebugResValues', task ':ultralytics_yolo:generateDebugResources', task ':ultralytics_yolo:packageDebugResources', task ':ultralytics_yolo:parseDebugLocalResources', task ':ultralytics_yolo:generateDebugRFile', task ':ultralytics_yolo:compileDebugKotlin']
+Tasks that were excluded: []
+Resolve mutations for :ultralytics_yolo:checkKotlinGradlePluginConfigurationErrors (Thread[#830,Execution worker Thread 7,5,main]) started.
+:ultralytics_yolo:checkKotlinGradlePluginConfigurationErrors (Thread[#830,Execution worker Thread 7,5,main]) started.
+
+> Task :ultralytics_yolo:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Skipping task ':ultralytics_yolo:checkKotlinGradlePluginConfigurationErrors' as task onlyIf 'errorDiagnostics are present' is false.
+Resolve mutations for :ultralytics_yolo:preBuild (Thread[#830,Execution worker Thread 7,5,main]) started.
+:ultralytics_yolo:preBuild (Thread[#833,Execution worker Thread 10,5,main]) started.
+
+> Task :ultralytics_yolo:preBuild UP-TO-DATE
+Skipping task ':ultralytics_yolo:preBuild' as it has no actions.
+Resolve mutations for :ultralytics_yolo:preDebugBuild (Thread[#833,Execution worker Thread 10,5,main]) started.
+:ultralytics_yolo:preDebugBuild (Thread[#823,included builds,5,main]) started.
+
+> Task :ultralytics_yolo:preDebugBuild UP-TO-DATE
+Skipping task ':ultralytics_yolo:preDebugBuild' as it has no actions.
+Resolve mutations for :ultralytics_yolo:generateDebugResValues (Thread[#823,included builds,5,main]) started.
+:ultralytics_yolo:generateDebugResValues (Thread[#826,Execution worker Thread 3,5,main]) started.
+
+> Task :ultralytics_yolo:generateDebugResValues UP-TO-DATE
+Caching disabled for task ':ultralytics_yolo:generateDebugResValues' because:
+  Build cache is disabled
+Skipping task ':ultralytics_yolo:generateDebugResValues' as it is up-to-date.
+Resolve mutations for :ultralytics_yolo:generateDebugResources (Thread[#826,Execution worker Thread 3,5,main]) started.
+:ultralytics_yolo:generateDebugResources (Thread[#826,Execution worker Thread 3,5,main]) started.
+
+> Task :ultralytics_yolo:generateDebugResources UP-TO-DATE
+Caching disabled for task ':ultralytics_yolo:generateDebugResources' because:
+  Build cache is disabled
+Skipping task ':ultralytics_yolo:generateDebugResources' as it is up-to-date.
+Resolve mutations for :ultralytics_yolo:packageDebugResources (Thread[#826,Execution worker Thread 3,5,main]) started.
+:ultralytics_yolo:packageDebugResources (Thread[#826,Execution worker Thread 3,5,main]) started.
+
+> Task :ultralytics_yolo:packageDebugResources UP-TO-DATE
+Caching disabled for task ':ultralytics_yolo:packageDebugResources' because:
+  Build cache is disabled
+Skipping task ':ultralytics_yolo:packageDebugResources' as it is up-to-date.
+Resolve mutations for :ultralytics_yolo:parseDebugLocalResources (Thread[#826,Execution worker Thread 3,5,main]) started.
+:ultralytics_yolo:parseDebugLocalResources (Thread[#826,Execution worker Thread 3,5,main]) started.
+
+> Task :ultralytics_yolo:parseDebugLocalResources UP-TO-DATE
+Caching disabled for task ':ultralytics_yolo:parseDebugLocalResources' because:
+  Build cache is disabled
+Skipping task ':ultralytics_yolo:parseDebugLocalResources' as it is up-to-date.
+Resolve mutations for :ultralytics_yolo:generateDebugRFile (Thread[#826,Execution worker Thread 3,5,main]) started.
+:ultralytics_yolo:generateDebugRFile (Thread[#826,Execution worker Thread 3,5,main]) started.
+
+> Task :ultralytics_yolo:generateDebugRFile UP-TO-DATE
+Caching disabled for task ':ultralytics_yolo:generateDebugRFile' because:
+  Build cache is disabled
+Skipping task ':ultralytics_yolo:generateDebugRFile' as it is up-to-date.
+Resolve mutations for :ultralytics_yolo:compileDebugKotlin (Thread[#826,Execution worker Thread 3,5,main]) started.
+:ultralytics_yolo:compileDebugKotlin (Thread[#826,Execution worker Thread 3,5,main]) started.
+
+> Task :ultralytics_yolo:compileDebugKotlin FAILED
+Caching disabled for JetifyTransform: C:\FlutterSDK\flutter\bin\cache\artifacts\engine\android-arm\flutter.jar because:
+  Build cache is disabled
+
+[Incubating] Problems report is available at: file:///C:/Users/rrohi/Downloads/gabn2/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':ultralytics_yolo:compileDebugKotlin'.
+> Error while evaluating property 'friendPathsSet$kotlin_gradle_plugin_common' of task ':ultralytics_yolo:compileDebugKotlin'.
+   > Could not resolve all files for configuration ':ultralytics_yolo:debugCompileClasspath'.
+      > Failed to transform flutter.jar to match attributes {artifactType=android-classes-jar, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
+         > Execution failed for JetifyTransform: C:\FlutterSDK\flutter\bin\cache\artifacts\engine\android-arm\flutter.jar.
+            > Transform's input file does not exist: C:\FlutterSDK\flutter\bin\cache\artifacts\engine\android-arm\flutter.jar. (See https://issuetracker.google.com/issues/158753935)
+> There are 3 more failures with identical causes.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.12/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 3s
+10 actionable tasks: 1 executed, 9 up-to-date
+Watched directory hierarchies: [C:\FlutterSDK\flutter\packages\flutter_tools\gradle, C:\Users\rrohi\Downloads\gabn2\android]

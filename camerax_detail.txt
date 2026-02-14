@@ -1,0 +1,217 @@
+﻿
+Found daemon DaemonIn
+fo{pid=51576, address
+=[182d30c2-843c-4000-
+ac0a-542ccfe027a4 
+port:54343, addresses
+:[/127.0.0.1]], 
+state=Idle, lastBusy=
+1771068492188, contex
+t=DefaultDaemonContex
+t[uid=b53e1238-6c05-4
+076-9635-b9b95b1c431a
+,javaHome=C:\Program 
+Files\Android\Android
+ Studio\jbr,javaVersi
+on=21,javaVendor=JetB
+rains s.r.o.,daemonRe
+gistryDir=C:\Users\rr
+ohi\.gradle\daemon,pi
+d=51576,idleTimeout=1
+0800000,priority=NORM
+AL,applyInstrumentati
+onAgent=true,nativeSe
+rvicesMode=ENABLED,da
+emonOpts=-XX:MaxMetas
+paceSize=4G,-XX:Reser
+vedCodeCacheSize=512m
+,-XX:+HeapDumpOnOutOf
+MemoryError,-Xmx8G,-D
+file.encoding=UTF-8,-
+Duser.country=IN,-Dus
+er.language=en,-Duser
+.variant]} however 
+its context does not 
+match the desired 
+criteria.
+Wanted: DaemonRequest
+Context{jvmCriteria=C
+:\Program 
+Files\Java\jdk-24 
+(no JDK specified, 
+using current Java 
+home), daemonOpts=[-X
+X:MaxMetaspaceSize=4G
+, -XX:ReservedCodeCac
+heSize=512m, -XX:+Hea
+pDumpOnOutOfMemoryErr
+or, -Xmx8G, -Dfile.en
+coding=UTF-8, 
+-Duser.country=IN, 
+-Duser.language=en, 
+-Duser.variant], appl
+yInstrumentationAgent
+=true, nativeServices
+Mode=ENABLED, 
+priority=NORMAL}
+Actual: DefaultDaemon
+Context[uid=b53e1238-
+6c05-4076-9635-b9b95b
+1c431a,javaHome=C:\Pr
+ogram Files\Android\A
+ndroid Studio\jbr,jav
+aVersion=21,javaVendo
+r=JetBrains s.r.o.,da
+emonRegistryDir=C:\Us
+ers\rrohi\.gradle\dae
+mon,pid=51576,idleTim
+eout=10800000,priorit
+y=NORMAL,applyInstrum
+entationAgent=true,na
+tiveServicesMode=ENAB
+LED,daemonOpts=-XX:Ma
+xMetaspaceSize=4G,-XX
+:ReservedCodeCacheSiz
+e=512m,-XX:+HeapDumpO
+nOutOfMemoryError,-Xm
+x8G,-Dfile.encoding=U
+TF-8,-Duser.country=I
+N,-Duser.language=en,
+-Duser.variant]
+Resolve mutations 
+for :gradle:checkKotl
+inGradlePluginConfigu
+rationErrors (Thread[
+#804,Execution 
+worker,5,main]) 
+started.
+:gradle:checkKotlinGr
+adlePluginConfigurati
+onErrors (Thread[#804
+,Execution 
+worker,5,main]) 
+started.
+> Task :gradle:checkK
+otlinGradlePluginConf
+igurationErrors 
+SKIPPED
+Skipping task ':gradl
+e:checkKotlinGradlePl
+uginConfigurationErro
+rs' as task onlyIf 
+'errorDiagnostics 
+are present' is 
+false.
+Tasks to be 
+executed: [task ':cam
+era_android_camerax:c
+heckKotlinGradlePlugi
+nConfigurationErrors'
+, task ':camera_andro
+id_camerax:preBuild',
+ task ':camera_androi
+d_camerax:preDebugBui
+ld', task ':camera_an
+droid_camerax:generat
+eDebugResValues', 
+task ':camera_android
+_camerax:generateDebu
+gResources', task ':c
+amera_android_camerax
+:packageDebugResource
+s', task ':camera_and
+roid_camerax:parseDeb
+ugLocalResources', 
+task ':camera_android
+_camerax:generateDebu
+gRFile', task ':camer
+a_android_camerax:com
+pileDebugKotlin', 
+task ':camera_android
+_camerax:javaPreCompi
+leDebug', task ':came
+ra_android_camerax:co
+mpileDebugJavaWithJav
+ac']
+Resolve mutations 
+for :camera_android_c
+amerax:checkKotlinGra
+dlePluginConfiguratio
+nErrors (Thread[#804,
+Execution 
+worker,5,main]) 
+started.
+:camera_android_camer
+ax:checkKotlinGradleP
+luginConfigurationErr
+ors (Thread[#804,Exec
+ution 
+worker,5,main]) 
+started.
+> Task :camera_androi
+d_camerax:checkKotlin
+GradlePluginConfigura
+tionErrors SKIPPED
+Skipping task ':camer
+a_android_camerax:che
+ckKotlinGradlePluginC
+onfigurationErrors' 
+as task onlyIf 
+'errorDiagnostics 
+are present' is 
+false.
+> Task :camera_androi
+d_camerax:compileDebu
+gJavaWithJavac FAILED
+  Task has failed 
+previously.
+C:\Users\rrohi\.gradl
+e\caches\8.12\transfo
+rms\2f2dd0160158d72d7
+7ff63e4a8a94298\trans
+formed\jetified-camer
+a-core-1.5.2-api.jar(
+/androidx/camera/core
+/SurfaceRequest.class
+): error: Cannot 
+attach type 
+annotations @org.jspe
+cify.annotations.NonN
+ull to SurfaceRequest
+.mSurfaceRecreationCo
+mpleter:
+1 error
+FAILURE: Build 
+failed with an 
+exception.
+Execution failed for 
+task ':camera_android
+_camerax:compileDebug
+JavaWithJavac'.
+> Compilation 
+failed; see the 
+compiler output 
+below.
+  C:\Users\rrohi\.gra
+dle\caches\8.12\trans
+forms\2f2dd0160158d72
+d77ff63e4a8a94298\tra
+nsformed\jetified-cam
+era-core-1.5.2-api.ja
+r(/androidx/camera/co
+re/SurfaceRequest.cla
+ss): error: Cannot 
+attach type 
+annotations @org.jspe
+cify.annotations.NonN
+ull to SurfaceRequest
+.mSurfaceRecreationCo
+mpleter:
+  1 error
+> Check your code 
+and dependencies to 
+fix the compilation 
+error(s)
+BUILD FAILED in 3s
+
+

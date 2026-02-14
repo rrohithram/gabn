@@ -1,0 +1,53 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | 
+Out-File -FilePath 
+"c:\Users\rrohi\D ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (:String   
+ ) [], RemoteExce    
+ption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+FAILURE: Build 
+failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\
+rrohi\Downloads\gabn2
+\android\build.gradle
+.kts' line: 25
+
+* What went wrong:
+Cannot run Project.af
+terEvaluate(Action) 
+when the project is 
+already evaluated.
+
+* Try:
+> Run with 
+--stacktrace option 
+to get the stack 
+trace.
+> Run with --info or 
+--debug option to 
+get more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at ht
+tps://help.gradle.org
+.
+
+BUILD FAILED in 6s
+Running Gradle task 'assembleDebug'...                              6.6s
+Gradle task 
+assembleDebug failed 
+with exit code 1

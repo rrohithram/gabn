@@ -1,0 +1,64 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : error 
+listing module 
+locations for 
+SYSTEM_MODULES: 
+java.io.IOException: 
+can't find system 
+classes
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | 
+Out-File -FilePath 
+"c:\Users\rrohi\D ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (error l   
+ isting m... syst    
+em classes:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+error: Unable to 
+find package 
+java.lang in 
+platform classes
+1 error
+
+FAILURE: Build 
+failed with an 
+exception.
+
+* What went wrong:
+Execution failed for 
+task ':camera_android
+_camerax:compileDebug
+JavaWithJavac'.
+> Compilation 
+failed; see the 
+compiler output 
+below.
+  error: Unable to 
+find package 
+java.lang in 
+platform classes
+  1 error
+
+* Try:
+> Check your code 
+and dependencies to 
+fix the compilation 
+error(s)
+> Run with --scan to 
+get full insights.
+
+BUILD FAILED in 3s
+Running Gradle task 'assembleDebug'...                              3.9s
+Gradle task 
+assembleDebug failed 
+with exit code 1

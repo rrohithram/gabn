@@ -1,0 +1,59 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | 
+Out-File -FilePath 
+"c:\Users\rrohi\D ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo   
+           : 
+NotSpecified: (:    
+String) [], 
+RemoteExc    eption
+    + 
+FullyQualifiedError  
+  Id : 
+NativeCommandErr    
+or
+ 
+FAILURE: Build 
+failed with an 
+exception.
+
+* What went wrong:
+Could not determine 
+the dependencies of 
+task 
+':app:packageDebug'.
+> Could not create 
+task ':app:compileDeb
+ugJavaWithJavac'.
+   > The value for 
+task ':app:compileDeb
+ugJavaWithJavac' 
+property 
+'javaCompiler' is 
+final and cannot be 
+changed any further.
+
+* Try:
+> Run with 
+--stacktrace option 
+to get the stack 
+trace.
+> Run with --info or 
+--debug option to 
+get more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at ht
+tps://help.gradle.org
+.
+
+BUILD FAILED in 38s
+Running Gradle task 'assembleDebug'...                             38.3s
+Gradle task 
+assembleDebug failed 
+with exit code 1

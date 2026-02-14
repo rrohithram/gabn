@@ -1,0 +1,407 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+
+> Task :gradle:compileKotlin
+w: file:///C:/FlutterSDK/flutter/packages/flutter_tools/gradle/src/main/kotlin/DependencyVersionChecker.kt:194:39 'getter for minSdkVersion: AndroidVersion' is deprecated. Will be removed in v9.0
+w: file:///C:/FlutterSDK/flutter/packages/flutter_tools/gradle/src/main/kotlin/FlutterPlugin.kt:11:37 'ApkVariant' is deprecated. Deprecated in Java
+w: file:///C:/FlutterSDK/flutter/packages/flutter_tools/gradle/src/main/kotlin/FlutterPlugin.kt:628:69 'ApkVariant' is deprecated. Deprecated in Java
+
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Configure project :app
+w: file:///C:/Users/rrohi/Downloads/gabn2/android/app/build.gradle.kts:42:5: 'aaptOptions(AaptOptions.() -> Unit): Unit' is deprecated. Replaced by 
+
+> Task :app:DebugMinSdkCheck
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+
+> Task :app:compileFlutterBuildDebug
+
+> Task :app:packJniLibsflutterBuildDebug UP-TO-DATE
+> Task :battery_plus:preBuild UP-TO-DATE
+> Task :battery_plus:preDebugBuild UP-TO-DATE
+> Task :battery_plus:writeDebugAarMetadata UP-TO-DATE
+> Task :camera_android_camerax:preBuild UP-TO-DATE
+> Task :camera_android_camerax:preDebugBuild UP-TO-DATE
+> Task :camera_android_camerax:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_contacts:preBuild UP-TO-DATE
+> Task :flutter_contacts:preDebugBuild UP-TO-DATE
+> Task :flutter_contacts:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_native_contact_picker:preBuild UP-TO-DATE
+> Task :flutter_native_contact_picker:preDebugBuild UP-TO-DATE
+> Task :flutter_native_contact_picker:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_phone_direct_caller:preBuild UP-TO-DATE
+> Task :flutter_phone_direct_caller:preDebugBuild UP-TO-DATE
+> Task :flutter_phone_direct_caller:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:preBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:preDebugBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_tts:preBuild UP-TO-DATE
+> Task :flutter_tts:preDebugBuild UP-TO-DATE
+> Task :flutter_tts:writeDebugAarMetadata UP-TO-DATE
+> Task :geolocator_android:preBuild UP-TO-DATE
+> Task :geolocator_android:preDebugBuild UP-TO-DATE
+> Task :geolocator_android:writeDebugAarMetadata UP-TO-DATE
+> Task :google_maps_flutter_android:preBuild UP-TO-DATE
+> Task :google_maps_flutter_android:preDebugBuild UP-TO-DATE
+> Task :google_maps_flutter_android:writeDebugAarMetadata UP-TO-DATE
+> Task :google_mlkit_commons:preBuild UP-TO-DATE
+> Task :google_mlkit_commons:preDebugBuild UP-TO-DATE
+> Task :google_mlkit_commons:writeDebugAarMetadata UP-TO-DATE
+> Task :google_mlkit_text_recognition:preBuild UP-TO-DATE
+> Task :google_mlkit_text_recognition:preDebugBuild UP-TO-DATE
+> Task :google_mlkit_text_recognition:writeDebugAarMetadata UP-TO-DATE
+> Task :permission_handler_android:preBuild UP-TO-DATE
+> Task :permission_handler_android:preDebugBuild UP-TO-DATE
+> Task :permission_handler_android:writeDebugAarMetadata UP-TO-DATE
+> Task :sensors_plus:preBuild UP-TO-DATE
+> Task :sensors_plus:preDebugBuild UP-TO-DATE
+> Task :sensors_plus:writeDebugAarMetadata UP-TO-DATE
+> Task :shared_preferences_android:preBuild UP-TO-DATE
+> Task :shared_preferences_android:preDebugBuild UP-TO-DATE
+> Task :shared_preferences_android:writeDebugAarMetadata UP-TO-DATE
+> Task :speech_to_text:preBuild UP-TO-DATE
+> Task :speech_to_text:preDebugBuild UP-TO-DATE
+> Task :speech_to_text:writeDebugAarMetadata UP-TO-DATE
+> Task :ultralytics_yolo:preBuild UP-TO-DATE
+> Task :ultralytics_yolo:preDebugBuild UP-TO-DATE
+> Task :ultralytics_yolo:writeDebugAarMetadata UP-TO-DATE
+> Task :url_launcher_android:preBuild UP-TO-DATE
+> Task :url_launcher_android:preDebugBuild UP-TO-DATE
+> Task :url_launcher_android:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:cleanMergeDebugAssets
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :battery_plus:mergeDebugShaders UP-TO-DATE
+> Task :battery_plus:compileDebugShaders NO-SOURCE
+> Task :battery_plus:generateDebugAssets UP-TO-DATE
+> Task :battery_plus:mergeDebugAssets UP-TO-DATE
+> Task :camera_android_camerax:mergeDebugShaders UP-TO-DATE
+> Task :camera_android_camerax:compileDebugShaders NO-SOURCE
+> Task :camera_android_camerax:generateDebugAssets UP-TO-DATE
+> Task :camera_android_camerax:mergeDebugAssets UP-TO-DATE
+> Task :flutter_contacts:mergeDebugShaders UP-TO-DATE
+> Task :flutter_contacts:compileDebugShaders NO-SOURCE
+> Task :flutter_contacts:generateDebugAssets UP-TO-DATE
+> Task :flutter_contacts:mergeDebugAssets UP-TO-DATE
+> Task :flutter_native_contact_picker:mergeDebugShaders UP-TO-DATE
+> Task :flutter_native_contact_picker:compileDebugShaders NO-SOURCE
+> Task :flutter_native_contact_picker:generateDebugAssets UP-TO-DATE
+> Task :flutter_native_contact_picker:mergeDebugAssets UP-TO-DATE
+> Task :flutter_phone_direct_caller:mergeDebugShaders UP-TO-DATE
+> Task :flutter_phone_direct_caller:compileDebugShaders NO-SOURCE
+> Task :flutter_phone_direct_caller:generateDebugAssets UP-TO-DATE
+> Task :flutter_phone_direct_caller:mergeDebugAssets UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:mergeDebugShaders UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:compileDebugShaders NO-SOURCE
+> Task :flutter_plugin_android_lifecycle:generateDebugAssets UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:mergeDebugAssets UP-TO-DATE
+> Task :flutter_tts:mergeDebugShaders UP-TO-DATE
+> Task :flutter_tts:compileDebugShaders NO-SOURCE
+> Task :flutter_tts:generateDebugAssets UP-TO-DATE
+> Task :flutter_tts:mergeDebugAssets UP-TO-DATE
+> Task :geolocator_android:mergeDebugShaders UP-TO-DATE
+> Task :geolocator_android:compileDebugShaders NO-SOURCE
+> Task :geolocator_android:generateDebugAssets UP-TO-DATE
+> Task :geolocator_android:mergeDebugAssets UP-TO-DATE
+> Task :google_maps_flutter_android:mergeDebugShaders UP-TO-DATE
+> Task :google_maps_flutter_android:compileDebugShaders NO-SOURCE
+> Task :google_maps_flutter_android:generateDebugAssets UP-TO-DATE
+> Task :google_maps_flutter_android:mergeDebugAssets UP-TO-DATE
+> Task :google_mlkit_commons:mergeDebugShaders UP-TO-DATE
+> Task :google_mlkit_commons:compileDebugShaders NO-SOURCE
+> Task :google_mlkit_commons:generateDebugAssets UP-TO-DATE
+> Task :google_mlkit_commons:mergeDebugAssets UP-TO-DATE
+> Task :google_mlkit_text_recognition:mergeDebugShaders UP-TO-DATE
+> Task :google_mlkit_text_recognition:compileDebugShaders NO-SOURCE
+> Task :google_mlkit_text_recognition:generateDebugAssets UP-TO-DATE
+> Task :google_mlkit_text_recognition:mergeDebugAssets UP-TO-DATE
+> Task :permission_handler_android:mergeDebugShaders UP-TO-DATE
+> Task :permission_handler_android:compileDebugShaders NO-SOURCE
+> Task :permission_handler_android:generateDebugAssets UP-TO-DATE
+> Task :permission_handler_android:mergeDebugAssets UP-TO-DATE
+> Task :sensors_plus:mergeDebugShaders UP-TO-DATE
+> Task :sensors_plus:compileDebugShaders NO-SOURCE
+> Task :sensors_plus:generateDebugAssets UP-TO-DATE
+> Task :sensors_plus:mergeDebugAssets UP-TO-DATE
+> Task :shared_preferences_android:mergeDebugShaders UP-TO-DATE
+> Task :shared_preferences_android:compileDebugShaders NO-SOURCE
+> Task :shared_preferences_android:generateDebugAssets UP-TO-DATE
+> Task :shared_preferences_android:mergeDebugAssets UP-TO-DATE
+> Task :speech_to_text:mergeDebugShaders UP-TO-DATE
+> Task :speech_to_text:compileDebugShaders NO-SOURCE
+> Task :speech_to_text:generateDebugAssets UP-TO-DATE
+> Task :speech_to_text:mergeDebugAssets UP-TO-DATE
+> Task :ultralytics_yolo:mergeDebugShaders UP-TO-DATE
+> Task :ultralytics_yolo:compileDebugShaders NO-SOURCE
+> Task :ultralytics_yolo:generateDebugAssets UP-TO-DATE
+> Task :ultralytics_yolo:mergeDebugAssets UP-TO-DATE
+> Task :url_launcher_android:mergeDebugShaders UP-TO-DATE
+> Task :url_launcher_android:compileDebugShaders NO-SOURCE
+> Task :url_launcher_android:generateDebugAssets UP-TO-DATE
+> Task :url_launcher_android:mergeDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:copyFlutterAssetsDebug
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :battery_plus:generateDebugResValues UP-TO-DATE
+> Task :battery_plus:generateDebugResources UP-TO-DATE
+> Task :battery_plus:packageDebugResources UP-TO-DATE
+> Task :camera_android_camerax:generateDebugResValues UP-TO-DATE
+> Task :camera_android_camerax:generateDebugResources UP-TO-DATE
+> Task :camera_android_camerax:packageDebugResources UP-TO-DATE
+> Task :flutter_contacts:generateDebugResValues UP-TO-DATE
+> Task :flutter_contacts:generateDebugResources UP-TO-DATE
+> Task :flutter_contacts:packageDebugResources UP-TO-DATE
+> Task :flutter_native_contact_picker:generateDebugResValues UP-TO-DATE
+> Task :flutter_native_contact_picker:generateDebugResources UP-TO-DATE
+> Task :flutter_native_contact_picker:packageDebugResources UP-TO-DATE
+> Task :flutter_phone_direct_caller:generateDebugResValues UP-TO-DATE
+> Task :flutter_phone_direct_caller:generateDebugResources UP-TO-DATE
+> Task :flutter_phone_direct_caller:packageDebugResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugResValues UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:packageDebugResources UP-TO-DATE
+> Task :flutter_tts:generateDebugResValues UP-TO-DATE
+> Task :flutter_tts:generateDebugResources UP-TO-DATE
+> Task :flutter_tts:packageDebugResources UP-TO-DATE
+> Task :geolocator_android:generateDebugResValues UP-TO-DATE
+> Task :geolocator_android:generateDebugResources UP-TO-DATE
+> Task :geolocator_android:packageDebugResources UP-TO-DATE
+> Task :google_maps_flutter_android:generateDebugResValues UP-TO-DATE
+> Task :google_maps_flutter_android:generateDebugResources UP-TO-DATE
+> Task :google_maps_flutter_android:packageDebugResources UP-TO-DATE
+> Task :google_mlkit_commons:generateDebugResValues UP-TO-DATE
+> Task :google_mlkit_commons:generateDebugResources UP-TO-DATE
+> Task :google_mlkit_commons:packageDebugResources UP-TO-DATE
+> Task :google_mlkit_text_recognition:generateDebugResValues UP-TO-DATE
+> Task :google_mlkit_text_recognition:generateDebugResources UP-TO-DATE
+> Task :google_mlkit_text_recognition:packageDebugResources UP-TO-DATE
+> Task :permission_handler_android:generateDebugResValues UP-TO-DATE
+> Task :permission_handler_android:generateDebugResources UP-TO-DATE
+> Task :permission_handler_android:packageDebugResources UP-TO-DATE
+> Task :sensors_plus:generateDebugResValues UP-TO-DATE
+> Task :sensors_plus:generateDebugResources UP-TO-DATE
+> Task :sensors_plus:packageDebugResources UP-TO-DATE
+> Task :shared_preferences_android:generateDebugResValues UP-TO-DATE
+> Task :shared_preferences_android:generateDebugResources UP-TO-DATE
+> Task :shared_preferences_android:packageDebugResources UP-TO-DATE
+> Task :speech_to_text:generateDebugResValues UP-TO-DATE
+> Task :speech_to_text:generateDebugResources UP-TO-DATE
+> Task :speech_to_text:packageDebugResources UP-TO-DATE
+> Task :ultralytics_yolo:generateDebugResValues UP-TO-DATE
+> Task :ultralytics_yolo:generateDebugResources UP-TO-DATE
+> Task :ultralytics_yolo:packageDebugResources UP-TO-DATE
+> Task :url_launcher_android:generateDebugResValues UP-TO-DATE
+> Task :url_launcher_android:generateDebugResources UP-TO-DATE
+> Task :url_launcher_android:packageDebugResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :battery_plus:extractDeepLinksDebug UP-TO-DATE
+> Task :battery_plus:processDebugManifest UP-TO-DATE
+> Task :camera_android_camerax:extractDeepLinksDebug UP-TO-DATE
+> Task :camera_android_camerax:processDebugManifest UP-TO-DATE
+> Task :flutter_contacts:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_contacts:processDebugManifest UP-TO-DATE
+> Task :flutter_native_contact_picker:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_native_contact_picker:processDebugManifest UP-TO-DATE
+> Task :flutter_phone_direct_caller:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_phone_direct_caller:processDebugManifest UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:processDebugManifest UP-TO-DATE
+> Task :flutter_tts:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_tts:processDebugManifest UP-TO-DATE
+> Task :geolocator_android:extractDeepLinksDebug UP-TO-DATE
+> Task :geolocator_android:processDebugManifest UP-TO-DATE
+> Task :google_maps_flutter_android:extractDeepLinksDebug UP-TO-DATE
+> Task :google_maps_flutter_android:processDebugManifest UP-TO-DATE
+> Task :google_mlkit_commons:extractDeepLinksDebug UP-TO-DATE
+> Task :google_mlkit_commons:processDebugManifest UP-TO-DATE
+> Task :google_mlkit_text_recognition:extractDeepLinksDebug UP-TO-DATE
+> Task :google_mlkit_text_recognition:processDebugManifest UP-TO-DATE
+> Task :permission_handler_android:extractDeepLinksDebug UP-TO-DATE
+> Task :permission_handler_android:processDebugManifest UP-TO-DATE
+> Task :sensors_plus:extractDeepLinksDebug UP-TO-DATE
+> Task :sensors_plus:processDebugManifest UP-TO-DATE
+> Task :shared_preferences_android:extractDeepLinksDebug UP-TO-DATE
+> Task :shared_preferences_android:processDebugManifest UP-TO-DATE
+> Task :speech_to_text:extractDeepLinksDebug UP-TO-DATE
+> Task :speech_to_text:processDebugManifest UP-TO-DATE
+> Task :ultralytics_yolo:extractDeepLinksDebug UP-TO-DATE
+> Task :ultralytics_yolo:processDebugManifest UP-TO-DATE
+> Task :url_launcher_android:extractDeepLinksDebug UP-TO-DATE
+> Task :url_launcher_android:processDebugManifest UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :battery_plus:compileDebugLibraryResources UP-TO-DATE
+> Task :battery_plus:parseDebugLocalResources UP-TO-DATE
+> Task :battery_plus:generateDebugRFile UP-TO-DATE
+> Task :camera_android_camerax:compileDebugLibraryResources UP-TO-DATE
+> Task :camera_android_camerax:parseDebugLocalResources UP-TO-DATE
+> Task :camera_android_camerax:generateDebugRFile UP-TO-DATE
+> Task :flutter_contacts:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_contacts:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_contacts:generateDebugRFile UP-TO-DATE
+> Task :flutter_native_contact_picker:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_native_contact_picker:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_native_contact_picker:generateDebugRFile UP-TO-DATE
+> Task :flutter_phone_direct_caller:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_phone_direct_caller:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_phone_direct_caller:generateDebugRFile UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugRFile UP-TO-DATE
+> Task :flutter_tts:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_tts:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_tts:generateDebugRFile UP-TO-DATE
+> Task :geolocator_android:compileDebugLibraryResources UP-TO-DATE
+> Task :geolocator_android:parseDebugLocalResources UP-TO-DATE
+> Task :geolocator_android:generateDebugRFile UP-TO-DATE
+> Task :google_maps_flutter_android:compileDebugLibraryResources UP-TO-DATE
+> Task :google_maps_flutter_android:parseDebugLocalResources UP-TO-DATE
+> Task :google_maps_flutter_android:generateDebugRFile UP-TO-DATE
+> Task :google_mlkit_commons:compileDebugLibraryResources UP-TO-DATE
+> Task :google_mlkit_commons:parseDebugLocalResources UP-TO-DATE
+> Task :google_mlkit_commons:generateDebugRFile UP-TO-DATE
+> Task :google_mlkit_text_recognition:compileDebugLibraryResources UP-TO-DATE
+> Task :google_mlkit_text_recognition:parseDebugLocalResources UP-TO-DATE
+> Task :google_mlkit_text_recognition:generateDebugRFile UP-TO-DATE
+> Task :permission_handler_android:compileDebugLibraryResources UP-TO-DATE
+> Task :permission_handler_android:parseDebugLocalResources UP-TO-DATE
+> Task :permission_handler_android:generateDebugRFile UP-TO-DATE
+> Task :sensors_plus:compileDebugLibraryResources UP-TO-DATE
+> Task :sensors_plus:parseDebugLocalResources UP-TO-DATE
+> Task :sensors_plus:generateDebugRFile UP-TO-DATE
+> Task :shared_preferences_android:compileDebugLibraryResources UP-TO-DATE
+> Task :shared_preferences_android:parseDebugLocalResources UP-TO-DATE
+> Task :shared_preferences_android:generateDebugRFile UP-TO-DATE
+> Task :speech_to_text:compileDebugLibraryResources UP-TO-DATE
+> Task :speech_to_text:parseDebugLocalResources UP-TO-DATE
+> Task :speech_to_text:generateDebugRFile UP-TO-DATE
+> Task :ultralytics_yolo:compileDebugLibraryResources UP-TO-DATE
+> Task :ultralytics_yolo:parseDebugLocalResources UP-TO-DATE
+> Task :ultralytics_yolo:generateDebugRFile UP-TO-DATE
+> Task :url_launcher_android:compileDebugLibraryResources UP-TO-DATE
+> Task :url_launcher_android:parseDebugLocalResources UP-TO-DATE
+> Task :url_launcher_android:generateDebugRFile UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :battery_plus:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :battery_plus:javaPreCompileDebug UP-TO-DATE
+> Task :camera_android_camerax:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :camera_android_camerax:javaPreCompileDebug UP-TO-DATE
+> Task :flutter_contacts:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :flutter_contacts:javaPreCompileDebug UP-TO-DATE
+> Task :flutter_native_contact_picker:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :flutter_native_contact_picker:javaPreCompileDebug UP-TO-DATE
+> Task :flutter_phone_direct_caller:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :flutter_phone_direct_caller:javaPreCompileDebug UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:javaPreCompileDebug UP-TO-DATE
+
+> Task :flutter_native_contact_picker:compileDebugKotlin
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_native_contact_picker-0.0.11/android/src/main/kotlin/com/jayesh/flutter_native_contact_picker/FlutterNativeContactPickerPlugin.kt:33:50 'fun getFlutterEngine(): FlutterEngine' is deprecated. Deprecated in Java.
+
+> Task :flutter_phone_direct_caller:compileDebugKotlin
+> Task :battery_plus:compileDebugKotlin
+
+> Task :flutter_contacts:compileDebugKotlin
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:41:40 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:42:30 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:43:30 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:44:33 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:45:37 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:46:32 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:47:36 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:48:30 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any?>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:49:29 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:50:32 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/Contact.kt:51:30 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.collections.Map<kotlin.String, kotlin.Any>>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:964:20 'static field PROTOCOL_AIM: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:965:20 'static field PROTOCOL_GOOGLE_TALK: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:966:20 'static field PROTOCOL_ICQ: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:967:20 'static field PROTOCOL_JABBER: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:968:20 'static field PROTOCOL_MSN: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:969:20 'static field PROTOCOL_NETMEETING: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:970:20 'static field PROTOCOL_QQ: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:971:20 'static field PROTOCOL_SKYPE: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:972:20 'static field PROTOCOL_YAHOO: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:985:50 'static field PROTOCOL_AIM: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:986:57 'static field PROTOCOL_GOOGLE_TALK: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:987:50 'static field PROTOCOL_ICQ: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:988:53 'static field PROTOCOL_JABBER: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:989:50 'static field PROTOCOL_MSN: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:990:57 'static field PROTOCOL_NETMEETING: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:991:53 'static field PROTOCOL_QQ: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:992:52 'static field PROTOCOL_SKYPE: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContacts.kt:993:52 'static field PROTOCOL_YAHOO: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:47:58 'fun getFlutterEngine(): FlutterEngine' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:48:62 'fun getFlutterEngine(): FlutterEngine' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:178:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:207:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:208:43 Unchecked cast of 'kotlin.Any' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:222:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:223:43 Unchecked cast of 'kotlin.Any' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:238:71 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.String>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:251:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:252:41 Unchecked cast of 'kotlin.Any' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:262:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:263:41 Unchecked cast of 'kotlin.Any' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:273:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:274:41 Unchecked cast of 'kotlin.Any' to 'kotlin.collections.Map<kotlin.String, kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:283:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:291:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:305:47 Unchecked cast of 'kotlin.Any!' to 'kotlin.collections.List<kotlin.Any>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:306:63 Unchecked cast of 'kotlin.Any' to 'kotlin.collections.Map<kotlin.String, kotlin.Any?>'.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/FlutterContactsPlugin.kt:380:68 'constructor(): Handler' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_contacts-1.1.9+2/android/src/main/kotlin/co/quis/flutter_contacts/properties/Account.kt:15:28 Unchecked cast of 'kotlin.Any?' to 'kotlin.collections.List<kotlin.String>'.
+
+> Task :flutter_plugin_android_lifecycle:compileDebugJavaWithJavac
+> Task :battery_plus:compileDebugJavaWithJavac NO-SOURCE
+> Task :battery_plus:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_contacts:compileDebugJavaWithJavac NO-SOURCE
+> Task :flutter_contacts:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_native_contact_picker:compileDebugJavaWithJavac NO-SOURCE
+> Task :flutter_native_contact_picker:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_phone_direct_caller:compileDebugJavaWithJavac NO-SOURCE
+> Task :flutter_phone_direct_caller:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_tts:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :flutter_tts:javaPreCompileDebug UP-TO-DATE
+> Task :geolocator_android:javaPreCompileDebug UP-TO-DATE
+> Task :camera_android_camerax:compileDebugKotlin
+
+> Task :flutter_tts:compileDebugKotlin
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_tts-4.2.5/android/src/main/kotlin/com/eyedeadevelopment/fluttertts/FlutterTtsPlugin.kt:804:27 'fun requestAudioFocus(p0: AudioManager.OnAudioFocusChangeListener!, p1: Int, p2: Int): Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/rrohi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_tts-4.2.5/android/src/main/kotlin/com/eyedeadevelopment/fluttertts/FlutterTtsPlugin.kt:812:27 'fun abandonAudioFocus(p0: AudioManager.OnAudioFocusChangeListener!): Int' is deprecated. Deprecated in Java.
+
+> Task :geolocator_android:compileDebugJavaWithJavac
+Java compiler version 24 has deprecated support for compiling with source/target version 8.
+Try one of the following options:
+    1. [Recommended] Use Java toolchain with a lower language version
+    2. Set a higher source/target version
+    3. Use a lower version of the JDK running the build (if you're not using Java toolchain)
+For more details on how to configure these settings, see https://developer.android.com/build/jdks.
+To suppress this warning, set android.javaCompile.suppressSourceTargetDeprecationWarning=true in gradle.properties.
+
+> Task :camera_android_camerax:compileDebugJavaWithJavac FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/rrohi/Downloads/gabn2/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.12/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+233 actionable tasks: 15 executed, 218 up-to-date

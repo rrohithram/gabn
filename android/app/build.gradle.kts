@@ -42,6 +42,10 @@ android {
     aaptOptions {
         noCompress += listOf("tflite")
     }
+
+    lint {
+        checkReleaseBuilds = false
+    }
 }
 
 flutter {

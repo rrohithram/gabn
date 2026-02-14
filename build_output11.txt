@@ -1,0 +1,110 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : e: file:///
+C:/Users/rrohi/Downlo
+ads/gabn2/android/bui
+ld.gradle.kts:28:25: 
+Unresolved 
+reference. None of 
+the following 
+candidates is 
+applicable because 
+of receiver type 
+mismatch: 
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | 
+Out-File -FilePath 
+"c:\Users\rrohi\D ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (e: file   
+ :///C:/U...type     
+mismatch: :Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+public val TaskContai
+ner.javaToolchains: T
+askProvider<ShowToolc
+hainsTask> defined 
+in 
+org.gradle.kotlin.dsl
+e: file:///C:/Users/r
+rohi/Downloads/gabn2/
+android/build.gradle.
+kts:29:21: 
+Unresolved 
+reference: 
+languageVersion
+
+FAILURE: Build 
+failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\
+rrohi\Downloads\gabn2
+\android\build.gradle
+.kts' line: 28
+
+* What went wrong:
+Script compilation 
+errors:
+
+  Line 28:           
+      project.javaToo
+lchains.compilerFor {
+                     
+              ^ 
+Unresolved 
+reference. None of 
+the following 
+candidates is 
+applicable because 
+of receiver type 
+mismatch: 
+                     
+                  
+public val TaskContai
+ner.javaToolchains: T
+askProvider<ShowToolc
+hainsTask> defined 
+in 
+org.gradle.kotlin.dsl
+
+  Line 29:           
+          languageVer
+sion.set(JavaLanguage
+Version.of(21))
+                     
+          ^ 
+Unresolved 
+reference: 
+languageVersion
+
+2 errors
+
+* Try:
+> Run with 
+--stacktrace option 
+to get the stack 
+trace.
+> Run with --info or 
+--debug option to 
+get more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at ht
+tps://help.gradle.org
+.
+
+BUILD FAILED in 32s
+Running Gradle task 'assembleDebug'...                             32.9s
+Gradle task 
+assembleDebug failed 
+with exit code 1

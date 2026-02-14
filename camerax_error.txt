@@ -1,0 +1,29 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+> Task :camera_android_camerax:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :camera_android_camerax:preBuild UP-TO-DATE
+> Task :camera_android_camerax:preDebugBuild UP-TO-DATE
+> Task :camera_android_camerax:generateDebugResValues UP-TO-DATE
+> Task :camera_android_camerax:generateDebugResources UP-TO-DATE
+> Task :camera_android_camerax:packageDebugResources UP-TO-DATE
+> Task :camera_android_camerax:parseDebugLocalResources UP-TO-DATE
+> Task :camera_android_camerax:generateDebugRFile UP-TO-DATE
+> Task :camera_android_camerax:compileDebugKotlin UP-TO-DATE
+> Task :camera_android_camerax:javaPreCompileDebug UP-TO-DATE
+
+> Task :camera_android_camerax:compileDebugJavaWithJavac FAILED
+
+[Incubating] Problems report is available at: file:///C:/Users/rrohi/Downloads/gabn2/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.12/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+12 actionable tasks: 1 executed, 11 up-to-date

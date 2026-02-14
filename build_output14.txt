@@ -1,0 +1,86 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk 
+--debug 2>&1 | Out-File 
+-FilePath 
+"c:\Users\rrohi\D ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (:  
+  String) [], RemoteExc   
+ eption
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+FAILURE: Build failed 
+with an exception.
+
+* What went wrong:
+Execution failed for task 
+':ultralytics_yolo:compile
+DebugKotlin'.
+> Error while evaluating 
+property 'friendPathsSet$k
+otlin_gradle_plugin_common
+' of task ':ultralytics_yo
+lo:compileDebugKotlin'.
+   > Could not resolve 
+all files for 
+configuration ':ultralytic
+s_yolo:debugCompileClasspa
+th'.
+      > Failed to 
+transform flutter.jar to 
+match attributes {artifact
+Type=android-classes-jar, 
+org.gradle.libraryelements
+=jar, org.gradle.usage=jav
+a-runtime}.
+         > Execution 
+failed for 
+JetifyTransform: C:\Flutte
+rSDK\flutter\bin\cache\art
+ifacts\engine\android-arm\
+flutter.jar.
+            > Transform's 
+input file does not 
+exist: C:\FlutterSDK\flutt
+er\bin\cache\artifacts\eng
+ine\android-arm\flutter.ja
+r. (See https://issuetrack
+er.google.com/issues/15875
+3935)
+> There are 3 more 
+failures with identical 
+causes.
+
+* Try:
+> Run with --stacktrace 
+option to get the stack 
+trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to get 
+full insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 23s
+Running Gradle task 'assembleDebug'...                             23.5s
+
+ΓöîΓöÇ Flutter Fix ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé This issue appears to be https://github.com/flutter/flutter/issues/58247. Γöé
+Γöé Fix this issue by adding the following to the file                        Γöé
+Γöé C:\Users\rrohi\Downloads\gabn2\android\app\build.gradle.kts:              Γöé
+Γöé android {                                                                 Γöé
+Γöé   lintOptions {                                                           Γöé
+Γöé     checkReleaseBuilds false                                              Γöé
+Γöé   }                                                                       Γöé
+Γöé }                                                                         Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+Gradle task assembleDebug 
+failed with exit code 1
