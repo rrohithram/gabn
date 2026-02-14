@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:gabn2/l10n/app_localizations.dart';
+import 'package:gaze/l10n/app_localizations.dart';
 
 import 'screens/home_screen.dart';
 
@@ -36,7 +36,7 @@ class AccessibilityNavApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Accessibility Navigator',
+      title: 'Gaze',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         AppLocalizations.delegate,

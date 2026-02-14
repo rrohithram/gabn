@@ -18,7 +18,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
   final List<TutorialStep> _steps = [
     TutorialStep(
       title: 'Welcome',
-      description: 'Welcome to GaBN. This app helps you navigate safely using your camera and voice commands.',
+      description: 'Welcome to Gaze. This app helps you navigate safely using your camera and voice commands.',
       icon: Icons.waving_hand,
     ),
     TutorialStep(

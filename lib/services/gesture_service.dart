@@ -28,7 +28,7 @@ class GestureService {
 
     try {
       if (defaultTargetPlatform == TargetPlatform.android) {
-        _channel = const MethodChannel('com.gabn2/gestures');
+        _channel = const MethodChannel('com.gaze/gestures');
         
         // Set up method call handler
         _channel?.setMethodCallHandler(_handleMethodCall);

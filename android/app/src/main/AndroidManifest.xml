@@ -19,7 +19,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
     <uses-feature android:name="android.hardware.location.gps" android:required="true"/>
     <application
-        android:label="gabn2"
+        android:label="Gaze"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -53,7 +53,7 @@
         <!-- Google Maps API Key - Replace with your key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="anything butthis" />
+            android:value="AIzaSyBO064s4_cEn-3etgZQMjYLOgXTiVvL570" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

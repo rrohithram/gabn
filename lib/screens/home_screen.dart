@@ -13,7 +13,7 @@ import '../services/vision_service.dart';
 import '../services/voice_command_service.dart';
 import '../services/sos_service.dart';
 import '../services/settings_service.dart';
-import 'package:gabn2/l10n/app_localizations.dart';
+import 'package:gaze/l10n/app_localizations.dart';
 import '../services/ocr_service.dart';
 import '../services/gesture_service.dart';
 import '../services/battery_service.dart';
@@ -206,6 +206,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
       // Start obstacle detection immediately
       await _vision.startDetection();
+
+      // Camera refresh: quick off-on cycle to fix ML Kit detection
+      // (obstacle detection only works after toggling camera off and on)
+      if (_vision.isInitialized && _vision.isCameraEnabled) {
+        await _vision.disableCamera();
+        await Future.delayed(const Duration(milliseconds: 500));
+        await _vision.enableCamera();
+      }
 
     } catch (e) {
       setState(() => _statusText = 'Error: $e');
