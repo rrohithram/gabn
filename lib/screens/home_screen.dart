@@ -173,10 +173,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       // Initialize settings
       await _settings.initialize();
       
-      // Sync VisionService with saved settings
-      if (!_settings.cameraEnabled) {
-        await _vision.disableCamera();
-      }
+      // Keep camera enabled at start; user can toggle off and that state is saved for next launch.
+      // Do not disable camera here so obstacle detection works immediately.
 
       // Initialize OCR
       await _ocr.initialize();
@@ -204,16 +202,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       await _tts.speak(AppLocalizations.of(context)!.appReadySpeak);
       await _haptic.vibrate();
 
-      // Start obstacle detection immediately
+      // Start obstacle detection immediately (camera already started in onCameraReady / above)
       await _vision.startDetection();
-
-      // Camera refresh: quick off-on cycle to fix ML Kit detection
-      // (obstacle detection only works after toggling camera off and on)
-      if (_vision.isInitialized && _vision.isCameraEnabled) {
-        await _vision.disableCamera();
-        await Future.delayed(const Duration(milliseconds: 500));
-        await _vision.enableCamera();
-      }
 
     } catch (e) {
       setState(() => _statusText = 'Error: $e');

@@ -1,0 +1,12 @@
+Analyzing vision_service.dart...                                
+
+  error - Undefined class 'ObjectDetector' - lib\services\vision_service.dart:42:3 - undefined_class
+   info - Statements in an if should be enclosed in a block - lib\services\vision_service.dart:375:29 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block - lib\services\vision_service.dart:376:34 - curly_braces_in_flow_control_structures
+   info - Use interpolation to compose strings and values - lib\services\vision_service.dart:465:22 - prefer_interpolation_to_compose_strings
+warning - The value of the local variable 'uRowStride' isn't used - lib\services\vision_service.dart:540:13 - unused_local_variable
+warning - The value of the local variable 'vRowStride' isn't used - lib\services\vision_service.dart:541:13 - unused_local_variable
+warning - The value of the local variable 'uPixelStride' isn't used - lib\services\vision_service.dart:543:13 - unused_local_variable
+warning - The value of the local variable 'vPixelStride' isn't used - lib\services\vision_service.dart:544:13 - unused_local_variable
+
+8 issues found. (ran in 2.3s)

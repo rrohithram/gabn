@@ -283,20 +283,26 @@ class VisionService {
       
       if (jpegBytes != null) {
         // 2. Predict using YOLO
-        // Note: predict takes Uint8List
-        final result = await (_objectDetector as YOLO).predict(jpegBytes);
-        
-        // 3. Process results
-        // Parse 'detections' list from result map.
-        // The structure varies, but usually it's a List of Maps or Objects.
-        // Based on doc: returns a Map containing 'detections' which is a List.
-        if (result.containsKey('detections')) {
-           // 'detections' is likely List<dynamic> where each item is a map that YOLOResult.fromMap(map) can parse?
-           // No, predict returns Map<String, dynamic>. the keys include 'boxes', 'detections'.
-           // Let's assume standard parsing or check exact return type.
-           // yolo.dart says: returns 'detections': List of YOLOResult-compatible detection maps.
-           final List<dynamic> detections = result['detections'] ?? [];
-           _processDetections(detections, image.width.toDouble(), image.height.toDouble());
+        debugPrint("DEBUG: Sending image to YOLO (${jpegBytes.length} bytes)");
+        try {
+          final result = await (_objectDetector as YOLO).predict(jpegBytes);
+          debugPrint("DEBUG: Raw YOLO result: $result");
+          
+          if (result.keys.isNotEmpty) {
+             debugPrint("DEBUG: Result keys: ${result.keys}");
+          }
+
+          // 3. Process results — plugin may return 'detections' or 'boxes'
+          List<dynamic>? detections = result['detections'] as List<dynamic>?;
+          if (detections == null && result.containsKey('boxes')) {
+            detections = result['boxes'] as List<dynamic>?;
+          }
+          if (detections != null && detections.isNotEmpty) {
+            debugPrint("DEBUG: Found ${detections.length} detections");
+            _processDetections(detections, image.width.toDouble(), image.height.toDouble());
+          }
+        } catch (e) {
+          debugPrint("DEBUG: YOLO prediction failed: $e");
         }
       }
     } catch (e) {
@@ -325,31 +331,58 @@ class VisionService {
       
       double confidence = (detectionData['confidence'] as num?)?.toDouble() ?? 0.0;
       
-      // Bounding box: might be a Map {'x':..., 'y':..., 'w':..., 'h':...} or List [x,y,x2,y2]
-      // Ultralytics package usually returns normalized [x, y, w, h] or similar.
-      // Let's look for 'boundingBox'.
-      // If it's a Map:
+      // Bounding box: ultralytics_yolo uses 'boundingBox' (pixels) and 'normalizedBox' (0–1) with left/top/right/bottom.
+      // Also support x/y/width/height and list [x1,y1,x2,y2].
       Rect rect = Rect.zero;
+      Map<dynamic, dynamic>? normalizedBox;
+      if (detectionData['normalizedBox'] != null && detectionData['normalizedBox'] is Map) {
+        normalizedBox = detectionData['normalizedBox'] as Map<dynamic, dynamic>;
+      }
       if (detectionData['boundingBox'] != null) {
         final box = detectionData['boundingBox'];
         if (box is Map) {
-           double x = (box['x'] as num).toDouble();
-           double y = (box['y'] as num).toDouble();
-           double w = (box['width'] as num).toDouble();
-           double h = (box['height'] as num).toDouble();
-           rect = Rect.fromLTWH(x, y, w, h);
+          final b = Map<String, dynamic>.from(box.map((k, v) => MapEntry(k.toString(), v)));
+          // Prefer left/top/right/bottom (ultralytics format)
+          if (b.containsKey('left') && b.containsKey('top') && b.containsKey('right') && b.containsKey('bottom')) {
+            rect = Rect.fromLTRB(
+              (b['left'] as num).toDouble(),
+              (b['top'] as num).toDouble(),
+              (b['right'] as num).toDouble(),
+              (b['bottom'] as num).toDouble(),
+            );
+          } else {
+            double x = (b['x'] as num?)?.toDouble() ?? (b['left'] as num?)?.toDouble() ?? 0;
+            double y = (b['y'] as num?)?.toDouble() ?? (b['top'] as num?)?.toDouble() ?? 0;
+            double w = (b['width'] as num?)?.toDouble() ?? (b['w'] as num?)?.toDouble() ?? 0;
+            double h = (b['height'] as num?)?.toDouble() ?? (b['h'] as num?)?.toDouble() ?? 0;
+            if (b.containsKey('right') && b.containsKey('bottom')) {
+              rect = Rect.fromLTRB(x, y, (b['right'] as num).toDouble(), (b['bottom'] as num).toDouble());
+            } else {
+              rect = Rect.fromLTWH(x, y, w, h);
+            }
+          }
         } else if (box is List && box.length >= 4) {
-           // Assume [x, y, x2, y2] or [x, y, w, h]
-           // Usually [left, top, right, bottom]
-           double x1 = (box[0] as num).toDouble();
-           double y1 = (box[1] as num).toDouble();
-           double x2 = (box[2] as num).toDouble();
-           double y2 = (box[3] as num).toDouble();
-           rect = Rect.fromLTRB(x1, y1, x2, y2);
+          double x1 = (box[0] as num).toDouble();
+          double y1 = (box[1] as num).toDouble();
+          double x2 = (box[2] as num).toDouble();
+          double y2 = (box[3] as num).toDouble();
+          rect = Rect.fromLTRB(x1, y1, x2, y2);
+        }
+      }
+      // Use normalized box for relative position/size when available (0–1)
+      if (normalizedBox != null) {
+        final n = Map<String, dynamic>.from(normalizedBox.map((k, v) => MapEntry(k.toString(), v)));
+        if (n.containsKey('left') && n.containsKey('top') && n.containsKey('right') && n.containsKey('bottom')) {
+          rect = Rect.fromLTRB(
+            (n['left'] as num).toDouble(),
+            (n['top'] as num).toDouble(),
+            (n['right'] as num).toDouble(),
+            (n['bottom'] as num).toDouble(),
+          );
         }
       }
 
-      if (confidence < 0.4) continue; 
+      if (confidence < 0.25) continue; 
 
       counts[label] = (counts[label] ?? 0) + 1;
       
